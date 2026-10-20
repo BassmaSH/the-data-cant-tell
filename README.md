@@ -2,10 +2,10 @@
 
 **Do language models invent causes when the data can't tell them why a number moved?**
 
-A director asks a data assistant *"Why did rentals drop at Hollin Cross in October?"*. Sometimes the answer is in
-the data: a staff walkout, a depot that closed, a customer whose contract ended. Sometimes it is not, and the only
-honest answer is "the data doesn't say". I wanted to know how often models give that honest answer, what makes
-them stop inventing, and what it costs.
+A director asks a data assistant "Why did rentals drop at Hollin Cross in October?". Sometimes the answer is in the
+data (a staff walkout, a depot that closed, a customer whose contract ended). Sometimes it is not, and the only
+honest answer is "the data doesn't say". I wanted to know how often and under which conditions models give that
+answer.
 
 Nine questions about an invented rental company, six models (Mistral Small, Mistral Large 2512, Mistral Large 4
 with and without reasoning, Claude Haiku, Sonnet and Opus), up to six ways of instructing them, about 320 answers
@@ -189,6 +189,6 @@ export MISTRAL_API_KEY=...          # and ANTHROPIC_API_KEY for the Claude model
 
 ## How this was built
 
-I designed the cases, wrote the first questions, made every prediction before each run, and decided the grading
-rules. Claude Code built the invented company, the data blocks, the scripts and the record in `NOTEBOOK.md`, and
-proposed the verdicts. October 13 to 20, 2026.
+I designed the cases, wrote the first questions, made predictions before each run, and decided the grading
+rules. Claude built the invented company, the data blocks, the scripts, and the record in `NOTEBOOK.md`, and
+proposed the verdicts.
