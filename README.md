@@ -144,7 +144,7 @@ same cost as without, and faster. They did not fix the small model: its errors w
 *before* the contract ended on the 16th; the question said "late January", and in the first round seven of eight Mistral answers
 moved the start earlier to fit a bigger drop. Opus was the only model to flag it in every set-up.
 
-## If I were advising a client
+## What this means for a data assistant
 
 - **Never ship a data assistant without an instruction about evidence.** Without one, the question's own
   assumption decides the answer.
