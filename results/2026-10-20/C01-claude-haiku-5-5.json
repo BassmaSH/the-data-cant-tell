@@ -1,0 +1,11 @@
+{
+ "case": "C01",
+ "model": "claude-haiku-5-5",
+ "question": "Why are North rentals down on last year since May?",
+ "system": "Don't say anything that isn't clearly supported by the data. If you are unable to answer something with the data, say so.",
+ "prompt_tokens": 1662,
+ "completion_tokens": 2865,
+ "stop": "end_turn",
+ "seconds": 14.16,
+ "answer": "North rentals are down about 8.8% on last year since May 4, and the data can't tell us why.\n\n**What the data shows**\n\n- **Size of the gap:** Over the eight weeks from 2026-05-04 to 2026-06-22, North averaged 4,769 on-rent days a week, against 5,226 for the same weeks in 2025. That is 3,659 fewer days in total, or about 457 a week.\n- **Timing:** The two years were level before May. For the four weeks from 2026-04-06 to 2026-04-27, North was 18,879 against 18,786 in 2025, about 0.5% higher. The gap opened in May.\n- **Weekly pattern:** Only the first comparison week (2026-05-04 vs 2025-05-05) was roughly level. The largest drops were in the weeks of 2026-06-08 (-16%) and 2026-06-15 (-16%).\n- **By depot:** All three North depots are down over the period:\n  - D01 Hollin Cross: -1,430 (-8.4%)\n  - D02 Petherby: -863 (-7.3%)\n  - D03 Scarrow Bridge: -1,366 (-10.6%)\n\n**What the timing suggests**\n\nThe decline starts in the same week the North price list changed (from 2026-05-04). That is a coincidence in timing, not evidence of cause. The data doesn't include prices, volumes by category, customer numbers, competitor activity, or weather, so I can't test whether the price change is responsible.\n\n**What the staff notes add**\n\n- On 2026-05-19, Petherby staff reported regulars grumbling about the new prices and two saying they would shop around. This is anecdotal and covers one depot. It doesn't show how many customers left or whether they did.\n- The South staff walkout at Tidesend and the Carrick Stowe closure are in other regions, so they don't explain the North figures.\n\n**What would help answer the question**\n\nRentals by category and customer for the North depots before and after 2026-05-04, comparing customers who were active in both years, and any data on competitor pricing or local demand."
+}

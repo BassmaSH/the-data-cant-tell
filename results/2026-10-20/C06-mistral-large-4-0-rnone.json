@@ -1,0 +1,10 @@
+{
+ "case": "C06",
+ "model": "mistral-large-4-0",
+ "question": "Why did North revenue drop on the week of 2026-07-13?",
+ "system": "Don't say anything that isn't clearly supported by the data. If you are unable to answer something with the data, say so.",
+ "prompt_tokens": 640,
+ "completion_tokens": 254,
+ "seconds": 3.96,
+ "answer": "I don't have enough data to answer this with confidence.\n\nHere's what I can see for North depots in the week of 2026-07-13:\n\n| Depot | 2026-07-06 | 2026-07-13 | Change |\n|-------|-----------|-------------|--------|\n| D01 Hollin Cross | 79,910 | 79,960 | +50 |\n| D02 Petherby | 46,873 | 56,469 | +9,596 |\n| D03 Scarrow Bridge | 59,593 | — (no data) | ? |\n\n**Total North revenue:**\n- 2026-07-06: 186,376 EUR\n- 2026-07-13: 136,429 EUR (D01 + D02 only, D03 missing)\n\nThe apparent \"drop\" in North revenue is entirely due to **D03 Scarrow Bridge having no data loaded** for that week (status missing, 0 rows). D01 and D02 actually both increased.\n\nWithout D03's data, I cannot determine whether total North revenue actually dropped, stayed flat, or rose. The data gap makes it impossible to answer why North revenue changed that week."
+}

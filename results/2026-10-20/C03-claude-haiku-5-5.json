@@ -1,0 +1,11 @@
+{
+ "case": "C03",
+ "model": "claude-haiku-5-5",
+ "question": "Why did East contract revenue fall from late January 2026?",
+ "system": "Don't say anything that isn't clearly supported by the data. If you are unable to answer something with the data, say so.",
+ "prompt_tokens": 1497,
+ "completion_tokens": 2534,
+ "stop": "end_turn",
+ "seconds": 11.27,
+ "answer": "The data points to the end of the Pemberwick Groundworks contract, but it doesn't prove it.\n\n**What the data shows**\n- East total revenue averaged about 55,450 EUR/week from 3 Nov 2025 to 5 Jan 2026. It averaged about 46,180 EUR/week from 12 Jan to 30 Mar 2026, a drop of roughly 9,300 EUR/week (about 17%).\n- The decline began in the week starting 12 January, slightly earlier than \"late January.\"\n- Most of the drop came from two depots (averages, pre-period vs. post-period from 12 Jan):\n  - D07 Fenmarsh: about 23,780 to 17,270 (down about 6,500)\n  - D08 Wickhollow: about 17,350 to 13,710 (down about 3,600)\n  - D09 Dunstrand: about 14,320 to 15,200 (up about 900)\n\n**Staff notes that match the timing**\n- 16 Dec 2025: Pemberwick Groundworks told D07 Fenmarsh it would not renew when its contract ended on 16 January.\n- 20 Jan 2026: Final off-hire collections for Pemberwick at D07 were completed.\n- 21 Jan 2026: The last two Pemberwick excavators were collected and checked in at D08 Wickhollow.\n\nThese notes line up with the drop at D07 and D08, which is consistent with Pemberwick's contract ending being the cause.\n\n**Limits of the data**\n- Revenue is not broken down by customer, so I can't confirm how much of the drop was Pemberwick's revenue.\n- The data doesn't show whether other customers also left or changed their spending during this period.\n- The price list changes don't apply to East (they cover South, North, and West), so they don't explain the East decline.\n- There's no prior-year data, so I can't tell whether this is seasonal.\n- Revenue did not fully return to its earlier level by late March, and the cause of that gap isn't in the data."
+}

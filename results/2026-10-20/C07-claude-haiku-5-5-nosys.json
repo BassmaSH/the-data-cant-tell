@@ -1,0 +1,11 @@
+{
+ "case": "C07",
+ "model": "claude-haiku-5-5",
+ "question": "What happened between 2025-11-10 and 2025-11-24 at D11 Lowen Quay?",
+ "system": null,
+ "prompt_tokens": 897,
+ "completion_tokens": 973,
+ "stop": "end_turn",
+ "seconds": 5.67,
+ "answer": "Between 2025-11-10 and 2025-11-24, on-rent days at D11 Lowen Quay rose well above normal and then eased back.\n\n- **Counter:** 83 (week of 11-03) jumped to 132, then 131 and 126.\n- **Online:** 42 jumped to 59, then 61 and 57.\n- **Contract:** 97 jumped to 135, then 135 and 129.\n- **Total:** about 222 before the rise, then 326, 327 and 312. That is roughly 40% above the Oct–early Nov level of about 180–275.\n\nThe increase was across all three channels. The level dropped back to 88, 36 and 88 (total 212) in the week of 12-01.\n\nThe data does not show why this happened. No price list changes were recorded in 2025, and there are no staff notes for D11 in this period. Carrick Stowe (D12) also rose in the week of 11-10 (166 to 210) and fell back by 11-24, but Abermoor (D10) did not follow the same pattern, so this may not be a West-wide effect. The cause would need checking outside this dataset."
+}

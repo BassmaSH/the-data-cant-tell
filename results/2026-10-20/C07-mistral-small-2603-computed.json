@@ -1,0 +1,11 @@
+{
+ "case": "C07",
+ "model": "mistral-small-2603",
+ "question": "What happened between 2025-11-10 and 2025-11-24 at D11 Lowen Quay?",
+ "system": "Don't say anything that isn't clearly supported by the data. If you are unable to answer something with the data, say so.",
+ "prompt_tokens": 2074,
+ "completion_tokens": 173,
+ "stop": "stop",
+ "seconds": 1.13,
+ "answer": "Between 2025-11-10 and 2025-11-24 at D11 Lowen Quay, the weekly on-rent days increased across all categories:\n\n- **Counter**: Increased from an average of 88 (2025-10-06 to 2025-11-03) to 130 (2025-11-10 to 2025-11-24), a +47.0% change.\n- **Online**: Increased from an average of 41 to 59, a +44.6% change.\n- **Contract**: Increased from an average of 106 to 133, a +25.7% change."
+}

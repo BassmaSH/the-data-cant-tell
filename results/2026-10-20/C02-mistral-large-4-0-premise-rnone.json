@@ -1,0 +1,11 @@
+{
+ "case": "C02",
+ "model": "mistral-large-4-0",
+ "question": "Why did West revenue fall from April 2026?",
+ "system": "Don't say anything that isn't clearly supported by the data. If you are unable to answer something with the data, say so. If the user is making an observation, make sure that observation is true first and correct it if not.",
+ "prompt_tokens": 1180,
+ "completion_tokens": 358,
+ "stop": "stop",
+ "seconds": 5.92,
+ "answer": "Based on the data provided, West revenue fell from April 2026 because **D12 Carrick Stowe closed on 2026-03-27** and stopped contributing revenue from the week of 2026-03-30 onwards.\n\nHere's the evidence:\n\n| Period | West total | D12 Carrick Stowe contribution |\n|--------|-----------|-------------------------------|\n| 2026-03-23 | 151,096 | 41,173 |\n| 2026-03-30 | 112,471 | — (no data, closed) |\n| 2026-04-06 | 101,313 | — |\n| 2026-04-13 | 116,951 | — |\n| ... | ... | — |\n\nThe staff notes confirm: *\"2026-02-10 D12 Carrick Stowe (West), R. Pellam: Head office confirmed: Carrick Stowe closes for good on Friday 27 March. Lease not renewed\"* and *\"2026-03-27 D12 Carrick Stowe (West), R. Pellam: Last day of trading. All equipment off hire and returned to the central yard.\"*\n\nD12 was contributing roughly **€27,000–€41,000 per week** before closure. Its removal accounts for the drop from ~€130,000–€150,000 range to ~€100,000–€130,000 range.\n\nThe remaining two West depots (D10 Abermoor and D11 Lowen Quay) actually show **growth** in April–May 2026 compared to earlier months, so the regional decline is entirely attributable to the D12 closure, not to weakness at the other depots."
+}

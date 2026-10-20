@@ -1,0 +1,26 @@
+Weekly rental revenue in EUR by depot (a dash means no rows were loaded for that depot and week)
+week_start | D01 Hollin Cross (North) | D02 Petherby (North) | D03 Scarrow Bridge (North)
+2026-06-15 | 63,910 | 54,536 | 55,483
+2026-06-22 | 76,346 | 58,312 | 49,901
+2026-06-29 | 79,164 | 55,961 | 57,507
+2026-07-06 | 79,910 | 46,873 | 59,593
+2026-07-13 | 79,960 | 56,469 | -
+2026-07-20 | 81,610 | 52,956 | 59,663
+2026-07-27 | 78,921 | 49,102 | 62,842
+2026-08-03 | 86,237 | 54,528 | 59,364
+2026-08-10 | 82,354 | 45,497 | 61,273
+
+Price list changes from 2026-01-01 to 2026-12-31, all regions:
+- South: categories ACC,EAR,PWT,PWL,CON, new list prices from 2026-04-06
+- North: categories ACC,EAR,PWT,PWL,CON, new list prices from 2026-05-04
+- West: categories ACC,EAR, new list prices from 2026-07-06
+
+Staff notes from 2026-06-15 to 2026-08-16, all depots:
+- 2026-06-15 D05 Tidesend (South), N. Farrow: Staff walkout over rota changes. Depot shut Monday to Thursday, reopened Friday with a skeleton crew. No new hires could be issued while shut.
+- 2026-06-22 D05 Tidesend (South), N. Farrow: Back to normal staffing from today.
+- 2026-06-30 D10 Abermoor (West), K. Averill: New West list prices for access and earthmoving start Monday 6 July.
+- 2026-07-21 D01 Hollin Cross (North), S. Marrin: Fire alarm test Thursday 10:00.
+- 2026-08-04 D06 Quenby Vale (South), M. Idris: Car park lines repainted on Sunday while shut.
+
+Weekly files not loaded (2026-06-15 to 2026-08-10, these depots):
+- 2026-07-13 D03: status missing, 0 rows

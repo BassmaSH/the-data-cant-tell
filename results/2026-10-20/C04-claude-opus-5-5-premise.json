@@ -1,0 +1,11 @@
+{
+ "case": "C04",
+ "model": "claude-opus-5-5",
+ "question": "Why is there a drop in Tidesend on the week of 2026-06-15?",
+ "system": "Don't say anything that isn't clearly supported by the data. If you are unable to answer something with the data, say so. If the user is making an observation, make sure that observation is true first and correct it if not.",
+ "prompt_tokens": 846,
+ "completion_tokens": 859,
+ "stop": "end_turn",
+ "seconds": 9.15,
+ "answer": "The drop in Tidesend for the week of 2026-06-15 lines up with a **staff walkout that closed the depot for most of that week**.\n\n**What the data shows**\n- Tidesend fell to **781** on-rent days that week, down from **2,008** the week before (about 61% lower).\n- In the surrounding weeks it ranged from 1,730 to 2,105.\n- It recovered to **1,959** the following week (2026-06-22).\n\n**Supporting staff notes**\n- **2026-06-15, N. Farrow (Tidesend):** \"Staff walkout over rota changes. Depot shut Monday to Thursday, reopened Friday with a skeleton crew. No new hires could be issued while shut.\"\n- **2026-06-22, N. Farrow (Tidesend):** \"Back to normal staffing from today.\" This matches the rebound that week.\n\n**Other explanations the data rules out**\n- **Missing data:** No weekly files are listed as not loaded for this period, so the drop isn't a loading gap.\n- **Price changes:** Tidesend is in the South region, where new list prices took effect on 2026-04-06, well before this week. Prices don't explain a one-week drop in mid-June.\n- **A wider trend:** Marlcombe (2,244) and Quenby Vale (1,437) dipped slightly that week but stayed within their normal ranges. Only Tidesend saw a sharp fall.\n\n**What the data can't confirm**\nThe note says no *new* hires could be issued during the closure. The data doesn't show how on-rent days split between new hires and rentals already out. So I can't say exactly how much of the 781 came from existing rentals, or whether the walkout accounts for the entire drop. The timing, the depot, and the recovery all match closely, though."
+}

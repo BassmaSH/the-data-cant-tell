@@ -1,0 +1,11 @@
+{
+ "case": "C04",
+ "model": "claude-haiku-5-5",
+ "question": "Why is there a drop in Tidesend on the week of 2026-06-15?",
+ "system": "Answer in four steps:\n1. Read the data the question is about.\n2. Check that the user's observation is true; correct it only if the data says otherwise.\n3. Check whether the data is enough to answer.\n4. If it is, answer with what the data shows. If not, say what's missing. Call any guess a guess.",
+ "prompt_tokens": 883,
+ "completion_tokens": 1173,
+ "stop": "end_turn",
+ "seconds": 6.26,
+ "answer": "Tidesend's on-rent days fell to 781 in the week of 2026-06-15, down from 2,008 the week before and 1,959 the week after. The drop is real, and the data has a value for that week, so the dash convention doesn't apply.\n\nThe most likely cause is the staff walkout recorded by N. Farrow on 2026-06-15. The depot was shut Monday to Thursday that week and reopened Friday with a skeleton crew, and no new hires could be issued while it was closed. The week of 2026-06-15 begins on a Monday, so the closure falls inside that week. The return to normal staffing on 2026-06-22 matches the rebound to 1,959.\n\nThe data doesn't show daily on-rent counts, so it can't confirm how much of the drop came from the closure and how much from the reduced crew on Friday. My explanation is an inference from the timing and the staff note, not a measured result."
+}

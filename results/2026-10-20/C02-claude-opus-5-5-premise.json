@@ -1,0 +1,11 @@
+{
+ "case": "C02",
+ "model": "claude-opus-5-5",
+ "question": "Why did West revenue fall from April 2026?",
+ "system": "Don't say anything that isn't clearly supported by the data. If you are unable to answer something with the data, say so. If the user is making an observation, make sure that observation is true first and correct it if not.",
+ "prompt_tokens": 1488,
+ "completion_tokens": 1661,
+ "stop": "end_turn",
+ "seconds": 17.72,
+ "answer": "# Why West Revenue Fell from April 2026\n\n**The drop is explained by the closure of D12 Carrick Stowe on Friday 27 March 2026.** The step down actually starts in the week of **30 March**, slightly before April.\n\n## What the data shows\n\n- **The step down:** West total went from 151,096 (w/c 23 Mar) to 112,471 (w/c 30 Mar). From that week on, D12 has no figures.\n- **The gap is a real closure, not missing data:**\n  - The depot list shows D12 closed 2026-03-27.\n  - Staff notes confirm it. On 10 Feb, head office confirmed closure on 27 March because the lease was not renewed. On 27 March, the note reads \"Last day of trading. All equipment off hire.\"\n  - The load log shows no missing West files, so the dashes reflect zero trading.\n- **Size of the lost revenue:** D12 averaged about **33,700/week** from Jan to Mar.\n\n## The remaining depots grew\n\n| | Jan–Mar (12 wks, D10+D11) | 30 Mar–25 May (9 wks, D10+D11) |\n|---|---|---|\n| Avg weekly revenue | ~99,600 | ~117,200 (+~18%) |\n| West total avg | ~133,200 | ~117,200 |\n\nD10 Abermoor and D11 Lowen Quay are higher after the closure than in Q1. This only partly offsets D12's loss, which is why the West total ends up about 16,000/week lower. The data does not show whether this growth came from former Carrick Stowe customers or from other causes.\n\n## What it is not\n\n- **Pricing:** West's only 2026 price change (categories ACC and EAR) takes effect **6 July 2026**, after this period. The April and May price changes applied to South and North only.\n\n## Not explained by the data\n\n- The dip in w/c 6 April (D10 55,310, D11 46,003, both down from the prior week).\n- The D11 drop in w/c 25 May (49,005, down from 60,503).\n- D12's unusually high final week (41,173).\n\nNo notes or other data account for these movements."
+}

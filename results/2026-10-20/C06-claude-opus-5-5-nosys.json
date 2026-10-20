@@ -1,0 +1,11 @@
+{
+ "case": "C06",
+ "model": "claude-opus-5-5",
+ "question": "Why did North revenue drop on the week of 2026-07-13?",
+ "system": null,
+ "prompt_tokens": 807,
+ "completion_tokens": 986,
+ "stop": "end_turn",
+ "seconds": 11.12,
+ "answer": "# North revenue did not really drop the week of 2026-07-13: D03's data is missing\n\nThe fall comes from a missing data file, not from lower business. The load log shows **D03 Scarrow Bridge's weekly file for 2026-07-13 was not loaded (status missing, 0 rows)**. North's total for that week therefore includes only two of its three depots.\n\n## The numbers\n\n| Week | D01 Hollin Cross | D02 Petherby | D03 Scarrow Bridge | North total |\n|---|---|---|---|---|\n| 2026-07-06 | 79,910 | 46,873 | 59,593 | 186,376 |\n| **2026-07-13** | **79,960** | **56,469** | **– (not loaded)** | **136,429** |\n| 2026-07-20 | 81,610 | 52,956 | 59,663 | 194,229 |\n\n- The apparent drop of about €50k (−27%) is almost exactly what D03 normally contributes (€50–63k a week, mostly around €60k).\n- Comparing only the depots that reported, revenue **rose**. D01 + D02 went from €126,783 to €136,429, about **+€9.6k (+7.6%)**, mostly from D02 recovering after a weak 07-06 week.\n- If D03 earned around its usual €59–60k that week, North's total would be roughly €195–196k. That would be in line with or slightly above the surrounding weeks.\n\n## Other possible causes, ruled out\n\n- **Price changes:** North's new list prices started on 2026-05-04, well before this period. The 2026-07-06 price change applies only to the West region.\n- **Staff notes:** Nothing that week indicates a closure or disruption in North. The only North note is a routine fire alarm test at D01 on 2026-07-21. The walkout was at D05 Tidesend (South) in June.\n\n## Recommended next step\n\nReload D03 Scarrow Bridge's file for the week of 2026-07-13 and re-run the North total. Until then, treat that week's North figure as incomplete rather than as a real decline."
+}

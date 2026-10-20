@@ -1,0 +1,11 @@
+{
+ "case": "C02",
+ "model": "mistral-large-4-0",
+ "question": "Why did West revenue fall from April 2026?",
+ "system": null,
+ "prompt_tokens": 1130,
+ "completion_tokens": 1539,
+ "stop": "stop",
+ "seconds": 78.3,
+ "answer": "West revenue fell from April 2026 because **depot D12 Carrick Stowe closed permanently on 27 March 2026**.\n\n**Evidence from the data:**\n*   **D12 stopped trading:** The last revenue recorded for D12 Carrick Stowe was €41,173 for the week starting 23 March. From the week starting 30 March onward, D12 shows a dash (\"-\"), indicating no rows were loaded.\n*   **Immediate drop in total:** West total revenue fell from **€151,096** (week of 23 March) to **€112,471** (week of 30 March)—a drop of **€38,625**, which closely matches D12's typical weekly contribution of €32,000–€41,000.\n*   **April figures:** Throughout April, the West total remained in the €101,000–€123,000 range (vs. €132,000–€151,000 in March), reflecting the loss of D12's revenue while the other two depots (D10 Abermoor and D11 Lowen Quay) continued trading at similar levels.\n\n**Supporting context from staff notes:**\n*   **10 February 2026:** Head office confirmed Carrick Stowe would close on Friday 27 March because the \"lease [was] not renewed.\"\n*   **27 March 2026:** Staff note confirms this was the \"Last day of trading. All equipment off hire and returned to the central yard.\"\n\nThe West region's price list changes (scheduled for 6 July 2026) had not yet taken effect and are not the cause of the April decline."
+}

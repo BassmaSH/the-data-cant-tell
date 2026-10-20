@@ -1,0 +1,11 @@
+{
+ "case": "C07",
+ "model": "mistral-large-4-0",
+ "question": "What happened between 2025-11-10 and 2025-11-24 at D11 Lowen Quay?",
+ "system": null,
+ "prompt_tokens": 700,
+ "completion_tokens": 1960,
+ "stop": "stop",
+ "seconds": 22.24,
+ "answer": "Between 2025-11-10 and 2025-11-24, **on-rent days at D11 Lowen Quay declined across all channels in the week starting 2025-11-24**, following two weeks of relatively high activity:\n\n*   **Counter:** Dropped from 131 (week of Nov 17) to **126** (week of Nov 24), down from 132 the previous week.\n*   **Online:** Dropped from 61 (week of Nov 17) to **57** (week of Nov 24), down from 59 the previous week.\n*   **Contract:** Fell from **135** (held steady for the weeks of Nov 10 and Nov 17) to **129** in the week of Nov 24.\n\nThere were no price list changes, staff notes, or missing weekly files recorded for D11 Lowen Quay during this period."
+}

@@ -1,0 +1,11 @@
+{
+ "case": "C03",
+ "model": "mistral-large-4-0",
+ "question": "Why did East contract revenue fall from late January 2026?",
+ "system": null,
+ "prompt_tokens": 1147,
+ "completion_tokens": 469,
+ "stop": "stop",
+ "seconds": 19.53,
+ "answer": "Looking at the data, East contract revenue fell from late January 2026 due to a specific customer loss at D07 Fenmarsh.\n\n**The key driver: Pemberwick Groundworks contract ended**\n\nFrom the staff notes:\n- **2025-12-16**: D07 Fenmarsh (East) — \"Pemberwick Groundworks told us they will not renew when the contract ends on **16 January**\"\n- **2026-01-20**: D07 Fenmarsh (East) — \"Final off-hire collections for Pemberwick Groundworks completed. All units back in the yard.\"\n- **2026-01-21**: D08 Wickhollow (East) — \"Last two Pemberwick excavators collected and checked in.\"\n\n**The revenue impact at D07 Fenmarsh:**\n\n| Period | D07 Fenmarsh revenue |\n|--------|---------------------|\n| 2026-01-12 (week before contract end) | €15,761 |\n| 2026-01-19 (week of contract end) | €20,347 |\n| 2026-01-26 (first full week after) | €20,597 |\n| 2026-02-02 | €17,482 |\n| 2026-02-09 | €11,110 |\n| 2026-02-16 | €15,381 |\n\nActually, looking more carefully at the **East total** trend:\n- Late January peak: €55,691 (2026-01-05), then €42,239 (2026-01-12)\n- The decline continues through February, reaching a low of **€38,196** on 2026-02-16\n\nThe Pemberwick Groundworks loss (a major customer with multiple units across both D07 and D08) removed significant contract revenue from mid-January onward. This was compounded by normal seasonal softness in February (typically the weakest month for rental), but the structural drop from ~€55K to ~€38-42K range is primarily attributable to this contract non-renewal.\n\nThe other East depots (D08, D09) remained relatively stable, confirming this was a D07-specific customer loss rather than a broader East region issue."
+}

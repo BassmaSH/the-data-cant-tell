@@ -1,0 +1,11 @@
+{
+ "case": "C06",
+ "model": "claude-sonnet-5-5",
+ "question": "Why did North revenue drop on the week of 2026-07-13?",
+ "system": "Don't say anything that isn't clearly supported by the data. If you are unable to answer something with the data, say so.",
+ "prompt_tokens": 843,
+ "completion_tokens": 834,
+ "stop": "end_turn",
+ "seconds": 6.94,
+ "answer": "**The drop appears to be a data gap, not a real fall in revenue.** D03 Scarrow Bridge has no rows loaded for the week of 2026-07-13. The load log lists \"2026-07-13 D03: status missing, 0 rows\", and the table shows a dash for that cell.\n\n- **North total on loaded data:** The week of 07-13 sums to 136,429 EUR (D01 79,960 + D02 56,469), against 186,376 EUR the week before (79,910 + 46,873 + 59,593). That is a fall of 49,947 EUR, but it compares a two-depot total with a three-depot total.\n- **The depots with data did not fall:** D01 was roughly flat (79,910 → 79,960) and D02 rose (46,873 → 56,469).\n- **D03's typical level:** D03 ran at about 50,000–63,000 EUR in the other weeks, which is similar in size to the apparent drop. That is only a comparison, and I can't say what D03 actually earned that week.\n- **Other explanations:** The North price change took effect on 2026-05-04, well before this week. The staff notes mention nothing for North depots in this week. The only North note is a fire alarm test at D01, dated 07-21.\n\nThe data doesn't show D03's real revenue for 2026-07-13, so I can't say whether it fell. To confirm, the D03 file for that week needs to be located and loaded."
+}

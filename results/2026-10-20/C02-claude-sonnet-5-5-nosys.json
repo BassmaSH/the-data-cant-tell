@@ -1,0 +1,11 @@
+{
+ "case": "C02",
+ "model": "claude-sonnet-5-5",
+ "question": "Why did West revenue fall from April 2026?",
+ "system": null,
+ "prompt_tokens": 1427,
+ "completion_tokens": 1421,
+ "stop": "end_turn",
+ "seconds": 12.64,
+ "answer": "**West revenue fell because Carrick Stowe (D12) closed. It was not a trading decline at the other depots.**\n\n- **Closure:** D12 had its last trading day on 2026-03-27, and the staff note confirms all equipment was returned to the central yard. The dashes from the week of 2026-03-30 are real zero trading. The load log shows no missing files.\n- **Size of the drop:** The West total went from 151,096 (week of 23 Mar) to 112,471 (week of 30 Mar), a fall of 38,625 or about 26%. D12 contributed 41,173 in its last full week, which is more than the whole drop.\n- **Remaining depots:** D10 and D11 together made 109,923 in the week of 23 Mar and 112,471 in the week of 30 Mar, so they rose about 2%. Their average weekly revenue was about 99,600 in January to March and about 117,200 from 30 March to 25 May, up roughly 18%.\n- **Overall effect:** The West average was about 133,200 a week in the 12 weeks before closure (D12 averaged about 33,700 of that). It has been about 117,200 a week since, roughly 12% lower. The remaining depots' growth has only partly made up for the lost depot.\n\nPrice changes don't explain it. West's list change isn't until 2026-07-06, and the April and May changes apply to South and North. The staff note about customers grumbling about prices is from a North depot (Petherby).\n\nTo compare like for like, use D10 plus D11 only, or exclude D12 from the earlier weeks."
+}

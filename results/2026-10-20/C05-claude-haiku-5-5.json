@@ -1,0 +1,11 @@
+{
+ "case": "C05",
+ "model": "claude-haiku-5-5",
+ "question": "Why is the South's average daily rate lower this summer than last summer? We didn't cut prices.",
+ "system": "Don't say anything that isn't clearly supported by the data. If you are unable to answer something with the data, say so.",
+ "prompt_tokens": 615,
+ "completion_tokens": 1414,
+ "stop": "end_turn",
+ "seconds": 9.49,
+ "answer": "The data doesn't explain the drop. I can confirm the numbers, but not the cause.\n\n**What the data shows**\n\n- Average daily rate fell from EUR 34.05 to EUR 29.82, down 12.4%.\n- On-rent days rose from 56,416 to 65,080, up 15.4%.\n- Rental revenue rose only slightly, from EUR 1,920,743 to EUR 1,940,567, up 1.0%.\n\nRevenue is roughly flat because the extra days offset the lower rate.\n\n**Why I can't say what caused it**\n\n- **Price list change:** South's new list prices for ACC, EAR, PWT, PWL and CON took effect on 2026-04-06, before this summer period. The data says the prices changed but not whether they went up or down, or by how much. If you didn't cut prices, the old and new South list prices for each category should confirm that. Note that the change affects only five categories, so it may not explain the whole gap.\n- **Mix:** The rate could fall if more days shifted to lower-rate categories or channels, or if more rentals were longer and carried lower daily rates. The data has no category or channel breakdown, so I can't test this.\n- **Discounting:** Rate per day could also fall through discounts or contract terms within the same list prices. Nothing here measures that.\n- **Staff notes:** None of the South notes relate to pricing or rates. The one South entry (D06 Quenby Vale, car park lines repainted on a Sunday while shut) is unlikely to explain a 12% rate drop, though I can't rule out a link without more data.\n\n**What would answer it**\n\n1. South's old and new list prices by category, with their effective dates.\n2. Days and revenue by category and channel for both periods.\n3. A price-versus-mix breakdown: rate changes within each category at constant volume, compared with the shift in days between categories.\n4. Discount or override data, if it's recorded."
+}

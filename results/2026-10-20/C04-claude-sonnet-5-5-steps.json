@@ -1,0 +1,11 @@
+{
+ "case": "C04",
+ "model": "claude-sonnet-5-5",
+ "question": "Why is there a drop in Tidesend on the week of 2026-06-15?",
+ "system": "Answer in four steps:\n1. Read the data the question is about.\n2. Check that the user's observation is true; correct it only if the data says otherwise.\n3. Check whether the data is enough to answer.\n4. If it is, answer with what the data shows. If not, say what's missing. Call any guess a guess.",
+ "prompt_tokens": 883,
+ "completion_tokens": 1220,
+ "stop": "end_turn",
+ "seconds": 11.22,
+ "answer": "**1. The data**\nTidesend (D05) on-rent days ran at 1,768 to 2,008 a week from 18 May to 8 June. In the week of 2026-06-15 it was 781, then 1,959 the next week. A staff note from N. Farrow dated 2026-06-15 says there was a staff walkout over rota changes. The depot was shut Monday to Thursday and reopened Friday with a skeleton crew, and no new hires could be issued while it was shut. A second note on 2026-06-22 says staffing was back to normal from that day.\n\n**2. Is the observation true?**\nYes. 781 is about 1,200 days (roughly 60%) below the prior week's 2,008, and well below anything else in the series. It isn't a data-loading gap, because the figure is present and the \"files not loaded\" list is empty.\n\n**3. Is the data enough to answer?**\nIt's enough to name the most likely cause, though not to prove it or measure its exact share.\n- The walkout note matches the week exactly, and the recovery to 1,959 the week staffing normalised fits it.\n- The South price change took effect on 2026-04-06, well before this window, so it doesn't explain a one-week dip that rebounded.\n- Marlcombe and Quenby Vale dipped slightly that week (about 160 and 110 days lower than the week before). These are small and within normal week-to-week movement, so there's no sign of a wider cause.\n\n**4. Answer**\nThe drop is almost certainly due to the walkout at Tidesend. The depot was closed for four days and on a skeleton crew for the fifth, so it couldn't issue new hires, and volume fell to 781. It recovered once normal staffing resumed on 22 June.\n\nAs a guess, the shortfall against a typical week of about 1,800 to 2,000 days is roughly 1,000 to 1,200 days. The data doesn't show how much of that came from missed new hires versus other effects, such as returns not being processed."
+}

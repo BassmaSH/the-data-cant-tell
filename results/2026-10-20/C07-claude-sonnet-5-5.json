@@ -1,0 +1,11 @@
+{
+ "case": "C07",
+ "model": "claude-sonnet-5-5",
+ "question": "What happened between 2025-11-10 and 2025-11-24 at D11 Lowen Quay?",
+ "system": "Don't say anything that isn't clearly supported by the data. If you are unable to answer something with the data, say so.",
+ "prompt_tokens": 933,
+ "completion_tokens": 1337,
+ "stop": "end_turn",
+ "seconds": 11.76,
+ "answer": "**What the data shows**\n\nFor the three weeks starting 2025-11-10, 11-17 and 11-24, D11 Lowen Quay had higher on-rent days in the counter and online channels than in any other week in the data. Both returned to earlier levels the week of 2025-12-01.\n\n| Channel | 5 weeks before (10-06 to 11-03) | 11-10 / 11-17 / 11-24 | Week of 12-01 |\n|---|---|---|---|\n| Counter | 83–93 | 132 / 131 / 126 | 88 |\n| Online | 39–42 | 59 / 61 / 57 | 36 |\n| Contract | 49–143 (very variable) | 135 / 135 / 129 | 88 |\n\n- **Counter and online:** both rose by roughly 45–50% over their earlier levels and stayed high for exactly three weeks.\n- **Contract:** the three weeks (135, 135, 129) are within its normal range, which swung between 49 and 143 in other weeks. The only visible change is that it was steadier. Contract on-rent days were also lower in 11-03 (97) and 12-01 (88), the weeks on either side of the spike.\n- **Total:** the combined total for the three weeks (326, 327, 312) was higher than any other week in the data (the next highest was 274).\n\n**Other West depots (same category)**\n- D10 Abermoor shows no matching rise (243, 310, 295 in those weeks, against 284–309 in other weeks).\n- D12 Carrick Stowe was higher in the first two weeks (210, 206) but fell back to 174 in the third. That is a weaker and shorter pattern than D11's.\n\n**What the data can't tell me**\n- **The cause:** there were no price list changes in 2025, and no staff note mentions D11 Lowen Quay. The notes for other depots don't plausibly relate to this. The data doesn't say whether the rise came from a promotion, a local event, particular customers, seasonal demand or something else.\n- **Whether customers shifted between channels or demand was new:** the data gives only weekly totals by channel.\n\nTo find the cause, you would need information such as local events, marketing activity, or customer or booking-level detail for those weeks."
+}

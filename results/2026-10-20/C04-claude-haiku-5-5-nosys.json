@@ -1,0 +1,11 @@
+{
+ "case": "C04",
+ "model": "claude-haiku-5-5",
+ "question": "Why is there a drop in Tidesend on the week of 2026-06-15?",
+ "system": null,
+ "prompt_tokens": 785,
+ "completion_tokens": 730,
+ "stop": "end_turn",
+ "seconds": 4.52,
+ "answer": "The drop is most likely due to a **staff walkout at Tidesend (D05, South)**.\n\n- **Staff note (2026-06-15, N. Farrow):** Staff walked out over rota changes. The depot was shut Monday to Thursday and reopened Friday with a skeleton crew. No new hires could be issued while it was shut.\n- **Data:** Tidesend recorded 781 on-rent days that week, against about 1,850 average for the previous four weeks, roughly 1,070 fewer (about 58% below normal).\n- **Recovery:** A note on 2026-06-22 says staffing was back to normal, and the next week's figure was 1,959.\n\nThe timing and the short, one-week shape both match a closure, so this looks like an operational disruption rather than a demand or pricing effect. The South price change (from 2026-04-06) was months earlier and doesn't explain a single-week drop."
+}

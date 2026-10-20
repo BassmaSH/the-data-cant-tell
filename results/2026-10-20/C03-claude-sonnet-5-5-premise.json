@@ -1,0 +1,11 @@
+{
+ "case": "C03",
+ "model": "claude-sonnet-5-5",
+ "question": "Why did East contract revenue fall from late January 2026?",
+ "system": "Don't say anything that isn't clearly supported by the data. If you are unable to answer something with the data, say so. If the user is making an observation, make sure that observation is true first and correct it if not.",
+ "prompt_tokens": 1522,
+ "completion_tokens": 2449,
+ "stop": "end_turn",
+ "seconds": 16.96,
+ "answer": "**The premise is only partly right.** East contract revenue was lower from mid-January onward, but there was no clear fall starting in late January.\n\n- The East total peaked at 63,080 in the week of 2025-12-01 and was already drifting down through December.\n- The first sharp drop was the week of 2026-01-12 (42,239, from 55,691). The following two weeks recovered to about 48-49k.\n- The lowest point was early to mid February: 41,811, 39,703 and 38,196.\n- From the week of 2026-02-23 it recovered to 44-52k. The week of 2026-03-30 (52,477) is about the same as 2026-01-05 (55,691) and above most of December.\n- The average weekly total was about 55.5k from 2025-11-03 to 2026-01-05, and about 46.2k from 2026-01-12 to 2026-03-30.\n\n**By depot (average weekly revenue, same two periods):**\n- D07 Fenmarsh: about 23.8k to 17.3k. This is the largest fall.\n- D08 Wickhollow: about 17.3k to 13.7k.\n- D09 Dunstrand: about 14.3k to 15.2k, slightly up, so it did not contribute to the decline.\n\n**Possible cause:** The staff notes say Pemberwick Groundworks would not renew its contract, which ended on 16 January. Final off-hire collections were logged at Fenmarsh on 2026-01-20 and at Wickhollow on 2026-01-21. The decline at those two depots, and not at Dunstrand, is consistent with that, and the timing roughly fits.\n\n**What the data can't confirm:**\n- The data has no customer-level breakdown, so I can't show how much revenue came from Pemberwick or that its loss explains the drop.\n- The notes don't mention any other East factor, and the price list changes don't apply to East. Other causes such as seasonality or other customers are neither supported nor ruled out by this data.\n- No East files are missing, so the drop isn't a loading gap.\n- The Carrick Stowe closure is in the West region and is not relevant to East."
+}

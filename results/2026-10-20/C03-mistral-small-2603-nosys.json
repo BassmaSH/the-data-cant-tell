@@ -1,0 +1,10 @@
+{
+ "case": "C03",
+ "model": "mistral-small-2603",
+ "question": "Why did East contract revenue fall from late January 2026?",
+ "system": null,
+ "prompt_tokens": 1595,
+ "completion_tokens": 407,
+ "seconds": 2.49,
+ "answer": "The decline in East contract revenue from late January 2026 can be attributed to the **loss of Pemberwick Groundworks' business** at **D07 Fenmarsh (East)**. Here’s the breakdown:\n\n### Key Events:\n1. **2025-12-16**: Pemberwick Groundworks notified they would **not renew their contract** (ending 16 January 2026).\n2. **2026-01-20**: Final off-hire collections completed, and all units were returned to the yard.\n3. **2026-01-21**: Last two Pemberwick excavators were collected and checked in at **D08 Wickhollow (East)**.\n\n### Impact on Revenue:\n- **D07 Fenmarsh (East)** saw a drop from **€20,884 (2026-01-05)** to **€15,761 (2026-01-12)** and further declines in subsequent weeks.\n- **D08 Wickhollow (East)** also experienced a decline, likely due to the loss of Pemberwick’s business (though partially offset by other contracts).\n\n### Supporting Data:\n- **East total revenue** fell from **€55,691 (2026-01-05)** to **€42,239 (2026-01-12)** and remained lower in the following weeks.\n- The revenue decline aligns with the **end of Pemberwick’s contract** (mid-January 2026).\n\n### Conclusion:\nThe **loss of Pemberwick Groundworks** was the primary driver of the revenue drop in late January 2026, as their contract termination led to reduced activity at **D07 Fenmarsh** and **D08 Wickhollow**."
+}

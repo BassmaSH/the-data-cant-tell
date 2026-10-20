@@ -1,0 +1,10 @@
+{
+ "case": "C07",
+ "model": "mistral-large-4-0",
+ "question": "What happened between 2025-11-10 and 2025-11-24 at D11 Lowen Quay?",
+ "system": "Don't say anything that isn't clearly supported by the data. If you are unable to answer something with the data, say so.",
+ "prompt_tokens": 729,
+ "completion_tokens": 341,
+ "seconds": 5.35,
+ "answer": "Based on the data provided, here's what happened at D11 Lowen Quay between 2025-11-10 and 2025-11-24:\n\n**On-rent days increased significantly:**\n- Week of 2025-11-10: 132 counter, 59 online, 135 contract (total: 326)\n- Week of 2025-11-17: 131 counter, 61 online, 135 contract (total: 327)\n- Week of 2025-11-24: 126 counter, 57 online, 129 contract (total: 312)\n\n**Key changes:**\n- **Counter on-rent days dropped** from 132 to 126 (a decrease of 6)\n- **Online on-rent days decreased slightly** from 59 to 57\n- **Contract on-rent days decreased** from 135 to 129 (a decrease of 6)\n\nOverall, total on-rent days decreased from 326 to 312 between these two weeks.\n\n**Context from other data:**\n- This period coincides with a **step-change increase** at D11 Lowen Quay that began the week of 2025-11-10 (jumping from 83 counter days in early November to 132), suggesting some kind of operational change or increased demand started around that time\n- The other West depots (D10 Abermoor and D12 Carrick Stowe) showed relatively stable or slightly fluctuating numbers during this same period\n\n**No specific staff notes** mention D11 Lowen Quay during this period, and there were **no price list changes** in 2025."
+}

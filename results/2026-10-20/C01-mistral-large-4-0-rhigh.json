@@ -1,0 +1,11 @@
+{
+ "case": "C01",
+ "model": "mistral-large-4-0",
+ "question": "Why are North rentals down on last year since May?",
+ "system": "Don't say anything that isn't clearly supported by the data. If you are unable to answer something with the data, say so.",
+ "prompt_tokens": 1324,
+ "completion_tokens": 2829,
+ "stop": "stop",
+ "seconds": 77.33,
+ "answer": "Based on the data, North rentals are down on last year since May primarily due to **new list prices that went live on 4 May 2026**.\n\n**Evidence from the data:**\n\n*   **Price change timing:** The price list changes note states that for the North region, new list prices for categories ACC, EAR, PWT, PWL, and CON took effect from **2026-05-04**. A staff note from D01 Hollin Cross on 2026-04-28 confirms: \"New list prices for the North go live Monday 4 May.\"\n*   **Decline in on-rent days:** Comparing the North totals week-by-week:\n    *   Week of 2026-05-04: 4,686 (vs 4,676 in 2025 – roughly flat)\n    *   Week of 2026-05-11: **4,494** (vs 5,193 in 2025 – down 699)\n    *   Week of 2026-05-18: **4,933** (vs 5,030 in 2025 – down 97)\n    *   Week of 2026-05-25: **4,642** (vs 5,185 in 2025 – down 543)\n    *   The decline continues into June (e.g., week of 2026-06-08: 4,638 vs 5,532 in 2025).\n*   **Customer reaction:** A staff note from D02 Petherby on **2026-05-19** states: \"Several regulars grumbling about the new prices. Two said they would shop around.\" This directly links the price change to customer dissatisfaction and potential loss of business.\n*   **Regional impact:** The decline is visible across all three North depots (D01, D02, and D03), particularly at D03 Scarrow Bridge (e.g., week of 2026-05-11: 1,286 vs 1,616 in 2025).\n\nNo other North-specific operational issues (such as closures or staffing problems) are noted in the data for this period."
+}

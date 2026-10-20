@@ -1,0 +1,11 @@
+{
+ "case": "C04",
+ "model": "mistral-large-4-0",
+ "question": "Why is there a drop in Tidesend on the week of 2026-06-15?",
+ "system": "Answer in four steps:\n1. Read the data the question is about.\n2. Check that the user's observation is true; correct it only if the data says otherwise.\n3. Check whether the data is enough to answer.\n4. If it is, answer with what the data shows. If not, say what's missing. Call any guess a guess.",
+ "prompt_tokens": 681,
+ "completion_tokens": 1391,
+ "stop": "stop",
+ "seconds": 19.59,
+ "answer": "1. **Read the data:** For D05 Tidesend, weekly on-rent days were 2,008 for the week starting 2026-06-08, then dropped to 781 for the week starting 2026-06-15, before recovering to 1,959 the following week (2026-06-22).\n\n2. **Check the observation:** The observation is correct. The data confirms a sharp drop from 2,008 to 781 on-rent days for the week of 2026-06-15.\n\n3. **Check sufficiency:** The data is sufficient to answer. The staff notes contain a specific entry for D05 Tidesend dated 2026-06-15 that explains the disruption.\n\n4. **Answer:** According to the staff note from N. Farrow dated 2026-06-15, there was a **staff walkout over rota changes**. The depot was **shut Monday to Thursday** and reopened Friday with a **skeleton crew**, and **no new hires could be issued while shut**. This operational closure explains the drop in on-rent days for that week."
+}

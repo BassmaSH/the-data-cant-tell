@@ -1,0 +1,11 @@
+{
+ "case": "C07",
+ "model": "claude-haiku-5-5",
+ "question": "What happened between 2025-11-10 and 2025-11-24 at D11 Lowen Quay?",
+ "system": "Don't say anything that isn't clearly supported by the data. If you are unable to answer something with the data, say so.",
+ "prompt_tokens": 933,
+ "completion_tokens": 1139,
+ "stop": "end_turn",
+ "seconds": 5.7,
+ "answer": "At D11 Lowen Quay, weekly on-rent days for category PWL rose from 11-10 to 11-24 and then fell back:\n\n| week_start | counter | online | contract | total |\n|---|---|---|---|---|\n| 2025-11-03 | 83 | 42 | 97 | 222 |\n| 2025-11-10 | 132 | 59 | 135 | 326 |\n| 2025-11-17 | 131 | 61 | 135 | 327 |\n| 2025-11-24 | 126 | 57 | 129 | 312 |\n| 2025-12-01 | 88 | 36 | 88 | 212 |\n\nCounter and online rose sharply in these three weeks and returned to roughly their earlier levels by 12-01. Contract days were higher in these weeks than on 11-03, but contract numbers fluctuate widely across the whole period, so that rise is less distinct.\n\nThe data does not explain the cause. There were no price list changes in 2025, and the staff notes contain no entries for D11 in this period. The other West depots don't show a matching pattern: D10 Abermoor fell to 243 in the week of 11-10 and then reached 310 and 295, and D12 Carrick Stowe rose to 210 and then eased to 174 with no clear step like D11's."
+}

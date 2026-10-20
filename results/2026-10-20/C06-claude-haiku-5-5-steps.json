@@ -1,0 +1,11 @@
+{
+ "case": "C06",
+ "model": "claude-haiku-5-5",
+ "question": "Why did North revenue drop on the week of 2026-07-13?",
+ "system": "Answer in four steps:\n1. Read the data the question is about.\n2. Check that the user's observation is true; correct it only if the data says otherwise.\n3. Check whether the data is enough to answer.\n4. If it is, answer with what the data shows. If not, say what's missing. Call any guess a guess.",
+ "prompt_tokens": 905,
+ "completion_tokens": 1221,
+ "stop": "end_turn",
+ "seconds": 6.2,
+ "answer": "**1. Data read**\n\nNorth has three depots: D01 Hollin Cross, D02 Petherby, and D03 Scarrow Bridge. For the week of 2026-07-13, D03 shows a dash, and the weekly file for D03 that week was not loaded (status missing, 0 rows).\n\n**2. Check the premise**\n\nThe premise doesn't hold. North's total falls only because D03 is missing:\n\n- Week of 2026-07-06 (all three depots): 79,910 + 46,873 + 59,593 = **186,376**\n- Week of 2026-07-13 (D03 absent): 79,960 + 56,469 + – = **136,429**\n\nThe two depots that were loaded both rose:\n\n- D01: 79,910 → 79,960 (+50)\n- D02: 46,873 → 56,469 (+9,596)\n- Combined D01 + D02: 126,783 → 136,429 (+9,646, about +7.6%)\n\n**3. Is the data enough?**\n\nNo. We have no D03 revenue for that week, so we can't say what North's true total was or whether D03 fell, rose, or stayed flat.\n\n**4. Answer**\n\nNorth revenue did not drop in the week of 2026-07-13 in any way the loaded data shows. The apparent drop of about 50,000 EUR comes from the missing D03 load. The loaded depots actually grew by about 9,600 EUR combined.\n\nOther records don't explain a real drop. The North list-price change took effect on 2026-05-04, so it isn't a factor. The only North staff note near that week is the D01 fire alarm test on Thursday 2026-07-21, which falls a week later.\n\nTo get a real figure, reload the D03 weekly file for 2026-07-13. As a rough guess only, D03 has averaged about 59,000 EUR a week recently, which would put North's total near 195,000 EUR. That is an estimate, not a loaded value."
+}

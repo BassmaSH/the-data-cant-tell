@@ -1,0 +1,11 @@
+{
+ "case": "C04",
+ "model": "mistral-large-4-0",
+ "question": "Why is there a drop in Tidesend on the week of 2026-06-15?",
+ "system": null,
+ "prompt_tokens": 606,
+ "completion_tokens": 510,
+ "stop": "stop",
+ "seconds": 6.62,
+ "answer": "The drop in Tidesend (D05) during the week of **2026-06-15** (falling from 2,008 to 781 on-rent days) was caused by a **staff walkout over rota changes**.\n\nAccording to the staff note from N. Farrow on 2026-06-15:\n> \"Staff walkout over rota changes. Depot shut Monday to Thursday, reopened Friday with a skeleton crew. No new hires could be issued while shut.\"\n\nThe depot was closed for the first four days of that week (Monday–Thursday) and only reopened on Friday with minimal staff, preventing new hires from being issued. Normal staffing resumed the following week (2026-06-22), which is why the numbers recovered to 1,959."
+}

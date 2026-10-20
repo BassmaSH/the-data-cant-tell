@@ -1,0 +1,11 @@
+{
+ "case": "C02",
+ "model": "claude-sonnet-5-5",
+ "question": "Why did West revenue fall from April 2026?",
+ "system": "Don't say anything that isn't clearly supported by the data. If you are unable to answer something with the data, say so. If the user is making an observation, make sure that observation is true first and correct it if not.",
+ "prompt_tokens": 1488,
+ "completion_tokens": 1275,
+ "stop": "end_turn",
+ "seconds": 10.8,
+ "answer": "**The fall was not from April, and the data points to Carrick Stowe's closure as the cause.**\n\n**Timing:** The drop appears in the week of 2026-03-30, not April. The West total went from 151,096 (week of 03-23) to 112,471 (week of 03-30), a fall of 38,625 EUR (about 26%).\n\n**Cause:**\n- D12 Carrick Stowe closed on 2026-03-27. The staff notes say it was a permanent closure and that all equipment was returned to the central yard.\n- D12 shows a dash from 03-30 onward. The \"files not loaded\" list says none are missing, so these are weeks with no trading, not a loading gap.\n- In the week of 03-23, D12 contributed 41,173 EUR. Losing it more than accounts for the drop.\n- The other two depots did not fall in that week. D10 plus D11 went from 109,923 to 112,471.\n\n**The remaining depots:**\n- D10 and D11 combined were about 83,000 to 100,000 EUR per week in January and February and about 110,000 EUR by late March.\n- They were between about 101,000 and 130,000 EUR per week from April to May.\n- There was a dip in the week of 04-06 (D10 55,310, D11 46,003; combined 101,313, down about 10% from the prior week). The data doesn't explain it.\n- D11 also fell in the week of 05-25 (49,005, down from 60,503). The data doesn't explain this either.\n\n**Price changes:** The West price change takes effect on 2026-07-06, after this data ends, so it can't explain the fall. The South (April 6) and North (May 4) changes affect other regions."
+}

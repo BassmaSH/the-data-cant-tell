@@ -1,0 +1,11 @@
+{
+ "case": "C06",
+ "model": "claude-haiku-5-5",
+ "question": "Why did North revenue drop on the week of 2026-07-13?",
+ "system": null,
+ "prompt_tokens": 807,
+ "completion_tokens": 1069,
+ "stop": "end_turn",
+ "seconds": 6.53,
+ "answer": "North revenue didn't actually drop in the week of 2026-07-13. The apparent fall comes from a missing data load.\n\n- **D03 Scarrow Bridge has no figure that week.** The load log says \"status missing, 0 rows,\" and the table shows a dash. The North total for that week therefore includes only D01 and D02.\n- **The two depots that did load rose.** D01 Hollin Cross was 79,960, up from 79,910, and D02 Petherby was 56,469, up from 46,873.\n\n| Week | D01 | D02 | D03 | North total |\n|---|---|---|---|---|\n| 2026-07-06 | 79,910 | 46,873 | 59,593 | 186,376 |\n| 2026-07-13 | 79,960 | 56,469 | **missing** | 136,429 (incomplete) |\n| 2026-07-20 | 81,610 | 52,956 | 59,663 | 194,229 |\n\nIf D03 had continued at its neighbouring weeks' level of roughly 59,600, the North total for 2026-07-13 would be about 196,000, in line with the surrounding weeks. That figure is an estimate, not a reported number.\n\nThe staff notes don't explain a North revenue change that week either. The North price list change took effect on 2026-05-04, and the only North note (the D01 fire alarm test) is dated 2026-07-21, the following week.\n\nThe gap should be fixed by reloading the D03 file for 2026-07-13 before the North figures are used for reporting or comparison."
+}

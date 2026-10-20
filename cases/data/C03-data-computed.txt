@@ -1,0 +1,49 @@
+Weekly rental revenue in EUR, contract channel only, by depot, East region (a dash means no rows were loaded for that depot and week)
+week_start | D07 Fenmarsh (East) | D08 Wickhollow (East) | D09 Dunstrand (East) | East total
+2025-11-03 | 30,945 | 12,322 | 16,364 | 59,630
+2025-11-10 | 20,293 | 20,324 | 8,171 | 48,788
+2025-11-17 | 25,026 | 18,049 | 15,613 | 58,687
+2025-11-24 | 28,138 | 20,488 | 12,175 | 60,801
+2025-12-01 | 25,999 | 19,766 | 17,315 | 63,080
+2025-12-08 | 20,141 | 14,813 | 17,700 | 52,654
+2025-12-15 | 23,306 | 16,543 | 15,322 | 55,171
+2025-12-22 | 19,168 | 17,893 | 13,957 | 51,018
+2025-12-29 | 23,894 | 14,551 | 10,538 | 48,984
+2026-01-05 | 20,884 | 18,720 | 16,087 | 55,691
+2026-01-12 | 15,761 | 14,268 | 12,211 | 42,239
+2026-01-19 | 20,347 | 14,416 | 13,599 | 48,362
+2026-01-26 | 20,597 | 12,669 | 16,133 | 49,399
+2026-02-02 | 17,482 | 13,303 | 11,027 | 41,811
+2026-02-09 | 11,110 | 11,624 | 16,969 | 39,703
+2026-02-16 | 15,381 | 8,348 | 14,468 | 38,196
+2026-02-23 | 16,576 | 15,333 | 15,865 | 47,773
+2026-03-02 | 21,603 | 13,509 | 14,837 | 49,949
+2026-03-09 | 17,743 | 13,336 | 12,538 | 43,616
+2026-03-16 | 17,759 | 15,975 | 18,581 | 52,315
+2026-03-23 | 13,878 | 15,978 | 18,477 | 48,334
+2026-03-30 | 18,991 | 15,751 | 17,735 | 52,477
+
+Price list changes from 2025-01-01 to 2026-12-31, all regions:
+- South: categories ACC,EAR,PWT,PWL,CON, new list prices from 2026-04-06
+- North: categories ACC,EAR,PWT,PWL,CON, new list prices from 2026-05-04
+- West: categories ACC,EAR, new list prices from 2026-07-06
+
+Staff notes from 2025-11-03 to 2026-04-05, all depots:
+- 2025-11-04 D03 Scarrow Bridge (North), J. Calloway: Till system updated overnight, no issues at opening.
+- 2025-11-25 D08 Wickhollow (East), P. Vance: First aid refresher booked for all yard staff in January.
+- 2025-12-09 D04 Marlcombe (South), T. Okonjo: Heating in the counter area fixed.
+- 2025-12-16 D07 Fenmarsh (East), L. Brandvold: Pemberwick Groundworks told us they will not renew when the contract ends on 16 January.
+- 2026-01-20 D07 Fenmarsh (East), L. Brandvold: Final off-hire collections for Pemberwick Groundworks completed. All units back in the yard.
+- 2026-01-21 D08 Wickhollow (East), P. Vance: Last two Pemberwick excavators collected and checked in.
+- 2026-02-10 D12 Carrick Stowe (West), R. Pellam: Head office confirmed: Carrick Stowe closes for good on Friday 27 March. Lease not renewed.
+- 2026-02-17 D10 Abermoor (West), K. Averill: New racking installed in the tool store.
+- 2026-03-27 D12 Carrick Stowe (West), R. Pellam: Last day of trading. All equipment off hire and returned to the central yard.
+
+Weekly files not loaded (2025-11-03 to 2026-03-30, East depots):
+- none
+
+Computed from the tables above (by code, not by the assistant):
+- D07 Fenmarsh (East), weekly average contract revenue (EUR): 2025-11-24 to 2026-01-12 22,161 (8 weeks); 2026-01-19 to 2026-03-09 17,605 (8 weeks). Change 2025-11-24 to 2026-01-12 → 2026-01-19 to 2026-03-09: -20.6 %
+- D08 Wickhollow (East), weekly average contract revenue (EUR): 2025-11-24 to 2026-01-12 17,130 (8 weeks); 2026-01-19 to 2026-03-09 12,817 (8 weeks). Change 2025-11-24 to 2026-01-12 → 2026-01-19 to 2026-03-09: -25.2 %
+- D09 Dunstrand (East), weekly average contract revenue (EUR): 2025-11-24 to 2026-01-12 14,413 (8 weeks); 2026-01-19 to 2026-03-09 14,430 (8 weeks). Change 2025-11-24 to 2026-01-12 → 2026-01-19 to 2026-03-09: +0.1 %
+- East total, weekly average contract revenue (EUR): 2025-11-24 to 2026-01-12 53,705 (8 weeks); 2026-01-19 to 2026-03-09 44,851 (8 weeks). Change 2025-11-24 to 2026-01-12 → 2026-01-19 to 2026-03-09: -16.5 %

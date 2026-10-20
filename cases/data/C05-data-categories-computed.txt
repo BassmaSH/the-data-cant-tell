@@ -1,0 +1,35 @@
+South region, all depots, categories and channels, the same eleven fiscal weeks of two years
+period | rental revenue (EUR) | on-rent days | average daily rate (EUR per on-rent day)
+2025-07-07 to 2025-09-15 (fiscal weeks 14-24, FY2026) | 1,920,743 | 56,416 | 34.05
+2026-07-06 to 2026-09-14 (fiscal weeks 14-24, FY2027) | 1,940,567 | 65,080 | 29.82
+
+The same weeks by category (South region, all depots and channels)
+category | on-rent days FY2026 | on-rent days FY2027 | average daily rate FY2026 (EUR) | average daily rate FY2027 (EUR)
+ACC Access | 9,782 | 8,291 | 53.68 | 55.92
+EAR Earthmoving | 6,013 | 4,464 | 103.36 | 107.35
+PWT Power tools | 23,485 | 33,509 | 14.55 | 15.15
+PWL Power and lighting | 7,026 | 7,116 | 29.26 | 30.49
+CON Concrete and compaction | 10,110 | 11,700 | 22.44 | 23.35
+
+Price list changes from 2025-01-01 to 2026-12-31, all regions:
+- South: categories ACC,EAR,PWT,PWL,CON, new list prices from 2026-04-06
+- North: categories ACC,EAR,PWT,PWL,CON, new list prices from 2026-05-04
+- West: categories ACC,EAR, new list prices from 2026-07-06
+
+Staff notes from 2026-07-06 to 2026-09-20, all depots:
+- 2026-07-21 D01 Hollin Cross (North), S. Marrin: Fire alarm test Thursday 10:00.
+- 2026-08-04 D06 Quenby Vale (South), M. Idris: Car park lines repainted on Sunday while shut.
+- 2026-09-01 D02 Petherby (North), H. Stroud: Autumn stock of heaters arrived.
+- 2026-09-15 D11 Lowen Quay (West), E. Sorley: Pressure washers serviced.
+
+Weekly files not loaded (2025-07-07 to 2026-09-14, South depots):
+- none
+
+Computed from the tables above (by code, not by the assistant):
+- Rental revenue +1.0 %; on-rent days +15.4 %; average daily rate 34.05 → 29.82 EUR (-12.4 %)
+- By category (on-rent days FY2026 → FY2027, share of all on-rent days, average daily rate change):
+- ACC Access: 9,782 → 8,291 (-15.2 %); share 17.3 % → 12.7 %; rate 53.68 → 55.92 (+4.2 %)
+- EAR Earthmoving: 6,013 → 4,464 (-25.8 %); share 10.7 % → 6.9 %; rate 103.36 → 107.35 (+3.9 %)
+- PWT Power tools: 23,485 → 33,509 (+42.7 %); share 41.6 % → 51.5 %; rate 14.55 → 15.15 (+4.1 %)
+- PWL Power and lighting: 7,026 → 7,116 (+1.3 %); share 12.5 % → 10.9 %; rate 29.26 → 30.49 (+4.2 %)
+- CON Concrete and compaction: 10,110 → 11,700 (+15.7 %); share 17.9 % → 18.0 %; rate 22.44 → 23.35 (+4.1 %)

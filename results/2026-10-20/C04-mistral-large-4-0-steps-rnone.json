@@ -1,0 +1,11 @@
+{
+ "case": "C04",
+ "model": "mistral-large-4-0",
+ "question": "Why is there a drop in Tidesend on the week of 2026-06-15?",
+ "system": "Answer in four steps:\n1. Read the data the question is about.\n2. Check that the user's observation is true; correct it only if the data says otherwise.\n3. Check whether the data is enough to answer.\n4. If it is, answer with what the data shows. If not, say what's missing. Call any guess a guess.",
+ "prompt_tokens": 681,
+ "completion_tokens": 343,
+ "stop": "stop",
+ "seconds": 5.42,
+ "answer": "I'll work through this step by step.\n\n**1. Read the data the question is about.**\n\nThe relevant data is the weekly on-rent days for D05 Tidesend:\n- 2026-06-08: 2,008\n- **2026-06-15: 781** ← the drop\n- 2026-06-22: 1,959\n\nAnd the staff notes for D05 Tidesend around that time.\n\n**2. Check that the user's observation is true.**\n\nYes, the drop is real: from 2,008 (week of 2026-06-08) to 781 (week of 2026-06-15), then back up to 1,959 (week of 2026-06-22). That's roughly a 61% drop, then near-full recovery.\n\n**3. Check whether the data is enough to answer.**\n\nThe staff notes contain a direct explanation for 2026-06-15 at D05 Tidesend.\n\n**4. Answer with what the data shows.**\n\nThe drop in Tidesend on the week of 2026-06-15 is explained by a **staff walkout over rota changes**. According to N. Farrow's note dated 2026-06-15: the depot was **shut Monday to Thursday** and only **reopened Friday with a skeleton crew**. The note also states \"No new hires could be issued while shut.\" The following note (2026-06-22) confirms \"Back to normal staffing from today,\" which matches the data showing on-rent days recovering to 1,959 that week."
+}

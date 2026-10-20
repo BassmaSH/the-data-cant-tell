@@ -1,0 +1,11 @@
+{
+ "case": "C02",
+ "model": "claude-opus-5-5",
+ "question": "Why did West revenue fall from April 2026?",
+ "system": null,
+ "prompt_tokens": 1427,
+ "completion_tokens": 1812,
+ "stop": "end_turn",
+ "seconds": 18.8,
+ "answer": "# Why West revenue fell from April 2026: the closure of D12 Carrick Stowe\n\n**The drop comes entirely from the closure of D12 Carrick Stowe, not from weaker trading.** The two depots still open actually grew.\n\n## What happened\n\n- Staff note, 2026-02-10: head office confirmed Carrick Stowe would \"close for good on Friday 27 March. Lease not renewed.\"\n- Staff note, 2026-03-27: \"Last day of trading. All equipment off hire and returned to the central yard.\"\n- The depot list confirms D12 closed on 2026-03-27.\n- The dashes from the week of 2026-03-30 are **not missing data**. No weekly files failed to load. The depot simply had no revenue after it closed.\n\n## Impact on the West total\n\n| Period | West total (avg/week) | D12 (avg/week) | D10 + D11 (avg/week) |\n|---|---|---|---|\n| Jan to Mar (12 weeks to 23 Mar) | 133,247 | 33,687 | 99,559 |\n| Apr to May (9 weeks from 30 Mar) | 117,183 | 0 | 117,183 |\n| Change | **−16,064 (−12%)** | −33,687 | **+17,624 (+18%)** |\n\nThe step is clearest across the closure:\n\n- **Week of 23 Mar:** total 151,096, of which D12 contributed 41,173.\n- **Week of 30 Mar:** total 112,471, a fall of 38,625.\n\nOver the same two weeks, D10 and D11 combined rose from 109,923 to 112,471.\n\n## Explanations the data rules out\n\n- **Price changes:** the West's only price change is for ACC and EAR categories from 2026-07-06, after this period. The April (South) and May (North) changes don't apply to the West.\n- **Customer pushback on prices:** the complaints noted on 2026-05-19 were at D02 Petherby in the North.\n- **Data gaps:** no West files are missing.\n\n## Underlying trend\n\n- D10 Abermoor and D11 Lowen Quay are trending upward. D10 reached its peak of 69,203 in the week of 18 May.\n- Part of their growth may be former Carrick Stowe customers moving to nearby depots, though the data can't confirm this.\n- The West total won't recover to its pre-April level unless the remaining depots absorb the roughly 34k a week Carrick Stowe used to bring in.\n- For a like-for-like view of performance, compare D10 and D11 only, or treat the West total from April as a new baseline."
+}

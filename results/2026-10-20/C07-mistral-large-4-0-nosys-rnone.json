@@ -1,0 +1,11 @@
+{
+ "case": "C07",
+ "model": "mistral-large-4-0",
+ "question": "What happened between 2025-11-10 and 2025-11-24 at D11 Lowen Quay?",
+ "system": null,
+ "prompt_tokens": 700,
+ "completion_tokens": 397,
+ "stop": "stop",
+ "seconds": 6.56,
+ "answer": "Looking at the data for D11 Lowen Quay between 2025-11-10 and 2025-11-24:\n\n| week_start | counter | online | contract | **Total** |\n|------------|---------|--------|----------|-----------|\n| 2025-11-10 | 132 | 59 | 135 | **326** |\n| 2025-11-17 | 131 | 61 | 135 | **327** |\n| 2025-11-24 | 126 | 57 | 129 | **312** |\n\n**What happened:**\n\nThere was a **significant step-change in total on-rent days** at D11 Lowen Quay starting the week of **2025-11-10**, where total on-rent days jumped from the ~80-90 range (previous weeks) to **326** — roughly a **3.5x increase**.\n\nThis elevated level was sustained through 2025-11-17 (327), then **dropped slightly to 312** in the week of 2025-11-24.\n\nThe increase was driven by growth across **all three channels**:\n- **Counter**: jumped from ~40 to 132 (3.3x)\n- **Online**: jumped from ~40 to 59 (1.5x)\n- **Contract**: jumped from ~98 to 135 (1.4x)\n\nThe counter channel saw the most dramatic proportional increase. The slight decline in the week of 2025-11-24 came from decreases in all three channels, particularly contract (down from 135 to 129).\n\nThere are **no price list changes** and **no staff notes specifically for D11 Lowen Quay** in this period that would explain this shift. The data suggests a major operational change, new contract wins, or possibly a data/loading change at this depot around 2025-11-10."
+}

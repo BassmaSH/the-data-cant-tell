@@ -1,0 +1,11 @@
+{
+ "case": "C02",
+ "model": "claude-opus-5-5",
+ "question": "Why did West revenue fall from April 2026?",
+ "system": "Don't say anything that isn't clearly supported by the data. If you are unable to answer something with the data, say so.",
+ "prompt_tokens": 1463,
+ "completion_tokens": 1534,
+ "stop": "end_turn",
+ "seconds": 15.12,
+ "answer": "# Why West Revenue Fell from April 2026\n\n**The fall is explained by the closure of D12 Carrick Stowe, not by weaker trading at the remaining depots.**\n\n## What the data shows\n\n**1. D12 Carrick Stowe closed on 2026-03-27.**\n- The depot list records it as closed on 2026-03-27.\n- R. Pellam's staff note from 2026-02-10 says head office confirmed the closure and that the lease was not renewed.\n- R. Pellam's note from 2026-03-27 confirms it was the last day of trading.\n- Its revenue appears as a dash from the week of 2026-03-30 onward. No West weekly files are listed as missing, so the dashes reflect the closure rather than a data-loading gap.\n\n**2. The drop in the West total matches the loss of D12's revenue.**\n- West total fell from 151,096 (week of 03-23) to 112,471 (week of 03-30).\n- From January to March, D12 averaged about 33,700/week, between 27,162 and 41,173.\n\n**3. The two remaining depots grew after D12 closed.**\n\n| Depot | Avg/week, 12 weeks to 03-23 | Avg/week, 9 weeks from 03-30 |\n|---|---|---|\n| D10 Abermoor | ~55,300 | ~63,200 |\n| D11 Lowen Quay | ~44,300 | ~54,000 |\n| D10 + D11 | ~99,600 | ~117,200 |\n\n**4. A price change is not the cause.**\nThe West's only listed price change is for the ACC and EAR categories, effective 2026-07-06. That is after the period shown. The April and May price changes applied to the South and North only.\n\n## What the data can't tell us\n\n- **Why D10 and D11 grew.** The rise begins around the week of D12's closure. That timing suggests former Carrick Stowe customers may have moved to the other depots, but no note or figure confirms this.\n- **The dip in the week of 04-06.** The West total was 101,313 that week, and the data gives no explanation.\n- **D11's lower final week.** D11 fell to 49,005 in the week of 05-25, and the data gives no explanation for that either."
+}

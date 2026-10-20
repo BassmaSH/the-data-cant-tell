@@ -1,0 +1,11 @@
+{
+ "case": "C06",
+ "model": "mistral-large-4-0",
+ "question": "Why did North revenue drop on the week of 2026-07-13?",
+ "system": null,
+ "prompt_tokens": 611,
+ "completion_tokens": 377,
+ "stop": "stop",
+ "seconds": 5.45,
+ "answer": "I need to analyze why North revenue dropped on the week of 2026-07-13.\n\n## North Revenue Data\n\n| Week | D01 Hollin Cross | D02 Petherby | D03 Scarrow Bridge | **North Total** |\n|------|-----------------|--------------|-------------------|-----------------|\n| 2026-07-06 | 79,910 | 46,873 | 59,593 | **186,376** |\n| **2026-07-13** | **79,960** | **56,469** | **— (no data)** | **136,429** |\n| 2026-07-20 | 81,610 | 52,956 | 59,663 | **194,229** |\n\n## Analysis\n\n**The drop is entirely due to missing data from D03 Scarrow Bridge.**\n\n- D01 and D02 actually **increased** week-over-week (D01: +50, D02: +9,596)\n- D03 shows a dash (—), meaning **0 rows were loaded** for that depot that week\n- The weekly files not loaded section confirms: **\"2026-07-13 D03: status missing, 0 rows\"**\n\n## Conclusion\n\n**North revenue \"dropped\" on 2026-07-13 because D03 Scarrow Bridge's data was not loaded (0 rows, status missing)** — this is a **data reporting gap, not an actual revenue decline**. The apparent drop of ~€49,947 is simply the missing D03 contribution (which was €59,593 the prior week and €59,663 the following week).\n\nThere is no staff note or operational issue recorded for D03 on that date — this appears to be a file loading/processing failure rather than a business disruption."
+}

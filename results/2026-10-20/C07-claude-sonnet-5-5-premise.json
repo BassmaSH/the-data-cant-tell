@@ -1,0 +1,11 @@
+{
+ "case": "C07",
+ "model": "claude-sonnet-5-5",
+ "question": "What happened between 2025-11-10 and 2025-11-24 at D11 Lowen Quay?",
+ "system": "Don't say anything that isn't clearly supported by the data. If you are unable to answer something with the data, say so. If the user is making an observation, make sure that observation is true first and correct it if not.",
+ "prompt_tokens": 958,
+ "completion_tokens": 981,
+ "stop": "end_turn",
+ "seconds": 9.62,
+ "answer": "Counter and online on-rent days at D11 Lowen Quay rose sharply for three weeks, then returned to their earlier levels. The data doesn't show why.\n\n**Counter**\n- It was 83-93 per week from 6 Oct to 3 Nov.\n- It rose to 132 (w/c 10 Nov), 131 (w/c 17 Nov) and 126 (w/c 24 Nov).\n- It fell back to 88 in the week of 1 Dec and stayed at 82-86 after that.\n\n**Online**\n- It was 39-42 per week before the rise.\n- It rose to 59, 61 and 57 over the same three weeks.\n- It dropped to 36 in the week of 1 Dec.\n\n**Contract**\n- Contract did not change in a clear way. It was 135, 135 and 129 in those weeks, within its usual range for this depot.\n- Contract is volatile throughout, from 49 to 143, so these weeks don't stand out.\n\n**Other depots**\n- D10 Abermoor and D12 Carrick Stowe show no matching three-week rise. D10 was 243, 310 and 295. D12 was 210, 206 and 174, which is no higher than its 210 and 206 in the weeks of 20 and 27 Oct.\n\n**Other possible explanations**\n- There were no price list changes in 2025.\n- No staff notes mention D11.\n- No weekly files were missing.\n\nThe data doesn't show what caused the rise in counter and online days at D11. You would need information not included here, such as local events, promotions or customer-level detail."
+}

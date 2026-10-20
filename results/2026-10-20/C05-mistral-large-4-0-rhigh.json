@@ -1,0 +1,11 @@
+{
+ "case": "C05",
+ "model": "mistral-large-4-0",
+ "question": "Why is the South's average daily rate lower this summer than last summer? We didn't cut prices.",
+ "system": "Don't say anything that isn't clearly supported by the data. If you are unable to answer something with the data, say so.",
+ "prompt_tokens": 456,
+ "completion_tokens": 2690,
+ "stop": "stop",
+ "seconds": 33.64,
+ "answer": "Based on the data provided, the South's average daily rate (ADR) fell from **€34.05 to €29.82** (a 12.4% decrease) because **on-rent days grew much faster than revenue**:\n\n| Metric | FY2026 (Weeks 14-24) | FY2027 (Weeks 14-24) | Change |\n|--------|---------------------|---------------------|---------|\n| Rental revenue | €1,920,743 | €1,940,567 | **+1.0%** |\n| On-rent days | 56,416 | 65,080 | **+15.3%** |\n| ADR | €34.05 | €29.82 | **-12.4%** |\n\n**Key observations:**\n\n1. **Volume outpaced revenue.** Revenue increased by only €19,824 while on-rent days increased by 8,664. This means the additional days generated an average of only **€2.29 per day** (€19,824 ÷ 8,664), far below the prior year's average rate. Mathematically, adding this much low-rate volume pulled the overall average down, even if list prices were unchanged.\n\n2. **Price list timing.** New list prices for South categories (ACC, EAR, PWT, PWL, CON) took effect on **2026-04-06**, which is before the FY2027 comparison period (starting 2026-07-06). The data does not specify whether these new prices were higher or lower, only that they were \"new.\"\n\n3. **Likely drivers (not explicitly confirmed in the data).** Since you state prices were not cut, the drop in ADR is consistent with:\n   - A **mix shift** toward lower-priced categories or equipment types\n   - **Increased discounting** to drive the 15.3% volume growth\n   - **Longer average rental durations** (longer rentals typically carry lower daily rates)\n\nThe data shows the *result* (higher volume at lower average rates) but does not include category-level or discount-level detail to confirm which specific factor caused the mix shift."
+}

@@ -1,0 +1,11 @@
+{
+ "case": "C03",
+ "model": "claude-haiku-5-5",
+ "question": "Why did East contract revenue fall from late January 2026?",
+ "system": "Don't say anything that isn't clearly supported by the data. If you are unable to answer something with the data, say so. If the user is making an observation, make sure that observation is true first and correct it if not.",
+ "prompt_tokens": 1522,
+ "completion_tokens": 3107,
+ "stop": "end_turn",
+ "seconds": 13.58,
+ "answer": "The data suggests the decline is concentrated at Fenmarsh (D07) and Wickhollow (D08), which matches the timing of the Pemberwick Groundworks exit. But the data doesn't show Pemberwick's revenue directly, so it can't confirm the cause.\n\n**The decline began in mid-January, not late January.** East totals averaged about 55,450 a week from 3 Nov to 5 Jan. From the week of 12 Jan they averaged about 46,200, roughly 17% lower. The biggest drop came in early February: 41,811 (2 Feb), 39,703 (9 Feb) and 38,196 (16 Feb). Totals recovered to 47,000–52,000 from late February.\n\n**Where the drop is:**\n- **D07 Fenmarsh:** averaged about 23,800 a week before 12 Jan and about 17,300 after, roughly 27% lower.\n- **D08 Wickhollow:** averaged about 17,300 before and about 13,700 after, roughly 21% lower.\n- **D09 Dunstrand:** averaged about 14,300 before and about 15,200 after. It did not fall.\n\n**Link to the staff notes:** On 16 Dec, D07 was told Pemberwick Groundworks would not renew when its contract ended on 16 January. Final collections at D07 were completed on 20 January, and the last two Pemberwick excavators were checked in at D08 on 21 January. The week starting 12 January is when East revenue first dropped, which is consistent with the contract ending, but the notes don't say when Pemberwick's rentals actually stopped, and the revenue data isn't split by customer.\n\n**Other factors:** The price list changes cover only South, North and West, so none apply to East. The notes don't mention other East changes in this period, and no East weekly files are missing. The Carrick Stowe closure is in the West region and doesn't bear on East.\n\nTo confirm the cause, you would need revenue or rental volume by customer for D07 and D08, ideally showing Pemberwick's weekly rentals before and after 16 January."
+}

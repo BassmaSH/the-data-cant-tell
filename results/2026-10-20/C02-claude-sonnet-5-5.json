@@ -1,0 +1,11 @@
+{
+ "case": "C02",
+ "model": "claude-sonnet-5-5",
+ "question": "Why did West revenue fall from April 2026?",
+ "system": "Don't say anything that isn't clearly supported by the data. If you are unable to answer something with the data, say so.",
+ "prompt_tokens": 1463,
+ "completion_tokens": 1692,
+ "stop": "end_turn",
+ "seconds": 12.99,
+ "answer": "**The fall in West revenue from April 2026 is explained by the closure of D12 Carrick Stowe.**\n\n- D12 closed on 2026-03-27. The staff note says it was the last day of trading and all equipment was returned to the central yard.\n- D12 shows a dash from the week of 2026-03-30. The \"files not loaded\" list says none are missing, so the dashes reflect no trading, not missing data.\n- The West total fell from 151,096 (week of 2026-03-23) to 112,471 (week of 2026-03-30). D12 had contributed 41,173 in the earlier week.\n\n**The other two depots did not fall.**\n- D10 Abermoor averaged about 55,300 per week from 5 Jan to 23 Mar and about 63,200 from 30 Mar to 25 May.\n- D11 Lowen Quay averaged about 44,300 per week in the first period and about 54,000 in the second.\n- Together, D10 and D11 rose from about 99,600 to about 117,200 per week.\n- D12 had averaged about 33,700 per week, so the West total still fell: from about 133,200 per week to about 117,200.\n\n**What the data can't explain:**\n- The dip in the week of 2026-04-06 (D10 55,310 and D11 46,003, both lower than the previous week). Nothing in the data explains it.\n- Why D10 and D11 grew. Possibly some of D12's business moved to them, but nothing in the data shows that.\n- The price list changes don't explain the fall. The West change doesn't start until 2026-07-06, and the South and North changes affect other regions."
+}

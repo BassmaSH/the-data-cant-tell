@@ -1,0 +1,11 @@
+{
+ "case": "C06",
+ "model": "claude-sonnet-5-5",
+ "question": "Why did North revenue drop on the week of 2026-07-13?",
+ "system": null,
+ "prompt_tokens": 807,
+ "completion_tokens": 829,
+ "stop": "end_turn",
+ "seconds": 6.67,
+ "answer": "**The drop is a data gap, not a real fall in revenue.** D03 Scarrow Bridge has no rows loaded for the week of 2026-07-13. The load log shows \"status missing, 0 rows\", and the table shows a dash for that week.\n\n**North total as loaded**\n\n| Week | D01 | D02 | D03 | Total |\n|---|---|---|---|---|\n| 07-06 | 79,910 | 46,873 | 59,593 | 186,376 |\n| 07-13 | 79,960 | 56,469 | missing | 136,429 (partial) |\n\n- The reported total is down about 49,900 EUR (roughly 27%).\n- That is almost exactly the size of a normal D03 week. D03 took 59,593 EUR the week before and 59,663 EUR the week after.\n- The two depots that did load were flat or up. D01 rose by 50 EUR and D02 rose by about 9,600 EUR.\n\n**Estimate if D03 had loaded:** at about 59,600 EUR, North would total roughly 196,000 EUR. That would be up about 10,000 EUR on the previous week, not down.\n\n**Other explanations ruled out**\n- The North price list change took effect on 2026-05-04, which is well before this week.\n- None of the staff notes affect a North depot that week. The D01 fire alarm test note is dated 07-21 and concerns a later week.\n\n**Next step:** get the D03 file for 2026-07-13 reloaded. Until it is, treat that week's North total as incomplete. The load log doesn't say why the file is missing, so that needs checking with whoever runs the load."
+}

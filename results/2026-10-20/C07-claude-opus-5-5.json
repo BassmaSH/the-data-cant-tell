@@ -1,0 +1,11 @@
+{
+ "case": "C07",
+ "model": "claude-opus-5-5",
+ "question": "What happened between 2025-11-10 and 2025-11-24 at D11 Lowen Quay?",
+ "system": "Don't say anything that isn't clearly supported by the data. If you are unable to answer something with the data, say so.",
+ "prompt_tokens": 933,
+ "completion_tokens": 1173,
+ "stop": "end_turn",
+ "seconds": 12.68,
+ "answer": "# D11 Lowen Quay, PWL: 2025-11-10 to 2025-11-24\n\n## What the data shows\n\nFor three consecutive weeks, **counter and online on-rent days both rose sharply**, then returned to their earlier levels in the week of 2025-12-01.\n\n| Channel | Typical weekly level (Oct to early Nov) | Weeks of 11-10 / 11-17 / 11-24 | Change | Week of 12-01 onward |\n|---|---|---|---|---|\n| Counter | 83–93 (avg ≈ 88) | 132 / 131 / 126 (avg ≈ 130) | ≈ +47% | 82–88 |\n| Online | 39–42 (avg ≈ 41) | 59 / 61 / 57 (avg ≈ 59) | ≈ +45% | 36–42 |\n| Contract | 49–143, swinging widely | 135 / 135 / 129 | Within normal range | 88–137 |\n\n- Counter and online rose by a similar proportion at the same time, held for exactly three weeks, and dropped back together.\n- Contract shows nothing clearly unusual. It varies a lot week to week, and these three values fall inside its normal range.\n\n## Context checks\n\n- **Other West depots:** D10 Abermoor and D12 Carrick Stowe show no matching three-week rise. D10 was actually lower in the week of 11-10 (243). So this looks specific to D11, at least within the West depots shown.\n- **Pricing:** No price list changes in 2025, so pricing doesn't explain it.\n- **Staff notes:** None mention D11 or any West depot.\n- **Data loading:** No weekly files were missing, so this isn't a gap or partial load in the data.\n\n## What I can't tell you\n\nThe data doesn't show **why** this happened. Nothing provided (prices, notes, or other depots) explains a temporary rise in walk-in and online demand at D11 during those weeks. Possible causes such as a local project, an event, or a competitor's outage could fit, but none is supported by the data. Asking the D11 depot staff would be the most direct way to find out."
+}

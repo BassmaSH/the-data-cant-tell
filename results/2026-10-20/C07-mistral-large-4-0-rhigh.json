@@ -1,0 +1,11 @@
+{
+ "case": "C07",
+ "model": "mistral-large-4-0",
+ "question": "What happened between 2025-11-10 and 2025-11-24 at D11 Lowen Quay?",
+ "system": "Don't say anything that isn't clearly supported by the data. If you are unable to answer something with the data, say so.",
+ "prompt_tokens": 729,
+ "completion_tokens": 2726,
+ "stop": "stop",
+ "seconds": 51.24,
+ "answer": "Based on the data provided, here is what occurred at D11 Lowen Quay (category PWL) between the weeks starting 2025-11-10 and 2025-11-24:\n\n**On-rent days changed as follows:**\n*   **Week of 2025-11-10:** Counter 132, Online 59, Contract 135 (Total: 326)\n*   **Week of 2025-11-17:** Counter 131, Online 61, Contract 135 (Total: 327)\n*   **Week of 2025-11-24:** Counter 126, Online 57, Contract 129 (Total: 312)\n\n**Summary of changes:**\n*   **Counter** on-rent days decreased by 6 (from 132 to 126)\n*   **Online** on-rent days decreased by 2 (from 59 to 57)\n*   **Contract** on-rent days decreased by 6 (from 135 to 129)\n*   **Total** on-rent days decreased by 14 (from 326 to 312)\n\n**Context:**\nThese weeks show significantly elevated activity compared to the preceding weeks (which had totals ranging from 181 to 274), followed by a slight decline in the week of 2025-11-24.\n\n**No explanatory events are recorded** in the provided data for D11 Lowen Quay during this specific period:\n*   There are no staff notes for D11 between 2025-11-10 and 2025-11-24.\n*   There were no price list changes during this period (or at any point in 2025 according to the data).\n*   No weekly files were missing for D11 during these weeks."
+}

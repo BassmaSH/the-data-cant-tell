@@ -1,0 +1,11 @@
+{
+ "case": "C06",
+ "model": "claude-opus-5-5",
+ "question": "Why did North revenue drop on the week of 2026-07-13?",
+ "system": "Don't say anything that isn't clearly supported by the data. If you are unable to answer something with the data, say so.",
+ "prompt_tokens": 843,
+ "completion_tokens": 809,
+ "stop": "end_turn",
+ "seconds": 7.96,
+ "answer": "# North revenue for 2026-07-13 looks lower because a depot file is missing\n\nThe apparent drop comes from missing data. D03 Scarrow Bridge has no data for that week: its file is listed as \"status missing, 0 rows.\" Any North total for 2026-07-13 includes only D01 and D02.\n\n| Depot | 2026-07-06 | 2026-07-13 | Change |\n|---|---|---|---|\n| D01 Hollin Cross | 79,910 | 79,960 | +50 |\n| D02 Petherby | 46,873 | 56,469 | +9,596 |\n| D03 Scarrow Bridge | 59,593 | – (not loaded) | n/a |\n| **Total as loaded** | **186,376** | **136,429** | **−49,947** |\n| **D01 + D02 only** | **126,783** | **136,429** | **+9,646 (+7.6%)** |\n\n- **The two depots that loaded both rose.** D01 was flat and D02 was up about 20%.\n- **The data doesn't show any real fall in revenue.** The \"drop\" equals D03's missing contribution, which was about 59,600 the week before.\n- **Nothing else in the data explains a decline:**\n  - The North price change took effect on 2026-05-04, well before this week.\n  - The only North staff note nearby, a D01 fire alarm test on 2026-07-21, is for a different week.\n\n**What the data can't tell you:**\n- D03's actual revenue for 2026-07-13. It was about 59,600 the week before and 59,663 the week after, but the real figure is unknown until the file is loaded.\n- Why the D03 file is missing.\n- Whether the full North total for that week went up or down.\n\nTo get a correct North figure, reload D03's 2026-07-13 file."
+}

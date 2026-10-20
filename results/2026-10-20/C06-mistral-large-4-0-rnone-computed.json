@@ -1,0 +1,11 @@
+{
+ "case": "C06",
+ "model": "mistral-large-4-0",
+ "question": "Why did North revenue drop on the week of 2026-07-13?",
+ "system": "Don't say anything that isn't clearly supported by the data. If you are unable to answer something with the data, say so.",
+ "prompt_tokens": 986,
+ "completion_tokens": 257,
+ "stop": "stop",
+ "seconds": 2.14,
+ "answer": "I don't have enough data to answer why North revenue dropped on the week of 2026-07-13.\n\nHere's what the data shows for that week:\n- **D01 Hollin Cross (North)**: €79,960 (up 0.1% from previous week)\n- **D02 Petherby (North)**: €56,469 (up 20.5% from previous week)\n- **D03 Scarrow Bridge (North)**: No rows loaded (dash in the table)\n\nThe \"drop\" in total North revenue that week is entirely explained by **D03 Scarrow Bridge having no data loaded** — the weekly files note confirms \"2026-07-13 D03: status missing, 0 rows.\"\n\nHowever, the data does **not** explain *why* D03 had no rows loaded. The staff notes for that period mention:\n- A fire alarm test at D01 on 2026-07-21 (after this week)\n- No staff notes for D03 Scarrow Bridge during this period\n\nThere is no information in the provided data about any operational issue, closure, or other cause at D03 for the week of 2026-07-13. The reason for the missing data is not stated."
+}

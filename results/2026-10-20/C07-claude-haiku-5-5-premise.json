@@ -1,0 +1,11 @@
+{
+ "case": "C07",
+ "model": "claude-haiku-5-5",
+ "question": "What happened between 2025-11-10 and 2025-11-24 at D11 Lowen Quay?",
+ "system": "Don't say anything that isn't clearly supported by the data. If you are unable to answer something with the data, say so. If the user is making an observation, make sure that observation is true first and correct it if not.",
+ "prompt_tokens": 958,
+ "completion_tokens": 1385,
+ "stop": "end_turn",
+ "seconds": 7.58,
+ "answer": "Between 2025-11-10 and 2025-11-24, D11 Lowen Quay's on-rent days rose and then fell back, but the data doesn't say why.\n\n- **Counter:** 83 (week of 11-03) jumped to 132 (11-10), then 131 (11-17) and 126 (11-24). It was back to 88 by 12-01.\n- **Online:** 42 (11-03) rose to 59, 61, and 57, then dropped to 36 on 12-01.\n- **Contract:** 97 (11-03) rose to 135, 135, and 129, then was 88 on 12-01. Contract values are volatile throughout the period (49 to 143), so this change is less clearly unusual.\n- **Total across the three channels:** about 222 (11-03), 326 (11-10), 327 (11-17), 312 (11-24), and 212 (12-01).\n\nThe data doesn't explain the increase:\n- The price list shows no changes in 2025.\n- The staff notes contain no entries for D11 in this period. The entries that fall within the window are for other depots.\n- The other West depots don't show a matching jump in the same weeks. D10 Abermoor dropped to 243 in the week of 11-10 before rising to 310, and D12 Carrick Stowe was roughly flat.\n\nWith only 12 weeks of data and no prior-year comparison, I can't tell whether this was seasonal, a one-off event, or something else."
+}

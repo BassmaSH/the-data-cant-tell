@@ -1,0 +1,11 @@
+{
+ "case": "C01",
+ "model": "mistral-large-4-0",
+ "question": "Why are North rentals down on last year since May?",
+ "system": null,
+ "prompt_tokens": 1295,
+ "completion_tokens": 3338,
+ "stop": "stop",
+ "seconds": 148.04,
+ "answer": "The decline in North rentals since May is almost certainly due to the **new list prices that went live on Monday 4 May 2026**.\n\n**Evidence from the data:**\nComparing the same fiscal weeks year-on-year, the North total drops consistently from mid-May onwards:\n\n| Week (2026) | North Total | Same Week (2025) | Change |\n|-------------|-------------|------------------|---------|\n| 2026-05-04 | 4,686 | 4,676 (2025-05-05) | +10 |\n| 2026-05-11 | 4,494 | 5,193 (2025-05-12) | **-699** |\n| 2026-05-18 | 4,933 | 5,030 (2025-05-19) | -97 |\n| 2026-05-25 | 4,642 | 5,185 (2025-05-26) | **-543** |\n| 2026-06-08 | 4,638 | 5,532 (2025-06-09) | **-894** |\n| 2026-06-15 | 4,787 | 5,672 (2025-06-16) | **-885** |\n\nThe drop is visible across all three North depots (D01, D02, and D03), indicating a region-wide effect rather than a depot-specific issue.\n\n**Evidence from staff notes:**\n- **2026-04-28** (D01 Hollin Cross): *\"New list prices for the North go live Monday 4 May. Counter staff briefed.\"*\n- **2026-05-19** (D02 Petherby): *\"Several regulars grumbling about the new prices. Two said they would shop around.\"*\n\nThe timing aligns perfectly: the price increase took effect on 4 May, and the year-on-year gap widens from the following week (11 May) onwards. The staff note from 19 May explicitly links the price change to customer dissatisfaction and lost business.\n\n**Other factors ruled out:**\n- The South region had a staff walkout in mid-June (D05 Tidesend), but this is after the North decline began and affects a different region.\n- The West region depot closure (D12 Carrick Stowe) was in March and also outside the North.\n- The West region price changes are not due until July 2026.\n\n**Conclusion:** The May price increase for categories ACC, EAR, PWT, PWL, and CON appears to have triggered customer pushback, with regulars shopping around for better rates, resulting in lower on-rent days across the North region."
+}

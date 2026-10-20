@@ -1,0 +1,10 @@
+{
+ "case": "C02",
+ "model": "mistral-large-2512",
+ "question": "Why did West revenue fall from April 2026?",
+ "system": "Answer in four steps:\n1. Read the data the question is about.\n2. Check that the user's observation is true; correct it only if the data says otherwise.\n3. Check whether the data is enough to answer.\n4. If it is, answer with what the data shows. If not, say what's missing. Call any guess a guess.",
+ "prompt_tokens": 1635,
+ "completion_tokens": 337,
+ "seconds": 5.29,
+ "answer": "1. Read the data the question is about\n   The table shows weekly rental revenue (in EUR) for the three West-region depots (D10 Abermoor, D11 Lowen Quay, D12 Carrick Stowe) and the West total from 2026-01-05 through 2026-05-25. Additional context includes depot open/close dates, price-list changes, and staff notes.\n\n2. Check that the user’s observation is true\n   The West total revenue drops sharply in the week starting 2026-03-30 (from 151 096 EUR the previous week to 112 471 EUR) and remains lower through April and May compared with late March.\n\n3. Check whether the data is enough to answer\n   The data shows that D12 Carrick Stowe’s revenue is missing from 2026-03-30 onward, and the staff notes confirm that D12 closed on 2026-03-27. No other revenue or price changes in the West region are recorded before July 2026.\n\n4. Answer with what the data shows\n   The fall in West revenue from April 2026 is due to the closure of depot D12 Carrick Stowe on 2026-03-27; from that date onward its weekly revenue (about 30 000–40 000 EUR) is no longer included in the West total."
+}

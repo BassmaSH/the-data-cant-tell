@@ -1,0 +1,11 @@
+{
+ "case": "C07",
+ "model": "claude-sonnet-5-5",
+ "question": "What happened between 2025-11-10 and 2025-11-24 at D11 Lowen Quay?",
+ "system": null,
+ "prompt_tokens": 897,
+ "completion_tokens": 1085,
+ "stop": "end_turn",
+ "seconds": 9.41,
+ "answer": "**Counter and online on-rent days at D11 jumped for three weeks, then dropped back.**\n\n| | Baseline (other weeks) | 10 Nov | 17 Nov | 24 Nov |\n|---|---|---|---|---|\n| Counter | about 82–93 (avg ~87) | 132 | 131 | 126 |\n| Online | about 36–42 (avg ~40) | 59 | 61 | 57 |\n\n- **Counter** ran roughly 40–45 days a week higher, about 50% above its usual level.\n- **Online** ran roughly 18–20 days a week higher, about 45–50% above its usual level.\n- Both fell back to normal in the week of 1 Dec (88 and 36).\n- **Contract** doesn't show a clear change. It was 135, 135 and 129 in those weeks, but it swings widely from week to week (49 to 143), so those values sit within its normal range.\n- Total D11 on-rent days went from 222 in the week of 3 Nov to 326 in the week of 10 Nov.\n\n**Other West depots:**\n- D10 Abermoor shows no similar lift (243, 310, 295 against a usual 240–310).\n- D12 Carrick Stowe was high in the first two weeks (210, 206) but only matches its earlier peaks (210 and 206 in late October). It was normal in the third week (174).\n- So the D11 jump doesn't look like a West-wide pattern.\n\n**Other context:**\n- No price changes were recorded for the period.\n- There are no staff notes for D11.\n- No weekly files are missing.\n\nThe data shows what happened but not why. The lift was specific to D11's counter and online channels and lasted exactly three weeks. To find the cause, you could check local events, promotions, or a competitor being unavailable, or ask the D11 team."
+}

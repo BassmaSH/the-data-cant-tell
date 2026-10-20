@@ -1,0 +1,25 @@
+Weekly on-rent days by depot (a dash means no rows were loaded for that depot and week)
+week_start | D01 Hollin Cross | D02 Petherby | D03 Scarrow Bridge
+2025-09-01 | 2,080 | 1,448 | 1,483
+2025-09-08 | 2,039 | 1,431 | 1,644
+2025-09-15 | 1,856 | 1,321 | 1,552
+2025-09-22 | 2,012 | 1,446 | 1,552
+2025-09-29 | 1,528 | 1,420 | 1,497
+2025-10-06 | 1,512 | 1,426 | 1,384
+2025-10-13 | 1,539 | 1,431 | 1,459
+2025-10-20 | 1,464 | 1,242 | 1,406
+2025-10-27 | 1,863 | 1,236 | 1,430
+2025-11-03 | 1,655 | 1,264 | 1,263
+2025-11-10 | 1,864 | 1,295 | 1,365
+2025-11-17 | 1,691 | 1,193 | 1,248
+
+Price list changes from 2025-01-01 to 2025-12-31, all regions:
+- none
+
+Staff notes from 2025-09-01 to 2025-11-23, all depots:
+- 2025-09-09 D09 Dunstrand (East), A. Quist: Delivery lorry in for service Tuesday, hired a replacement for the day.
+- 2025-10-14 D06 Quenby Vale (South), M. Idris: Winter lighting towers checked and fuelled.
+- 2025-11-04 D03 Scarrow Bridge (North), J. Calloway: Till system updated overnight, no issues at opening.
+
+Weekly files not loaded (2025-09-01 to 2025-11-17, these depots):
+- none

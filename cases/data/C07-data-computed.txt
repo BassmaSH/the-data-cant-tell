@@ -1,0 +1,49 @@
+Weekly on-rent days at D11 Lowen Quay, category PWL, by channel
+week_start | counter | online | contract
+2025-10-06 | 88 | 40 | 98
+2025-10-13 | 86 | 42 | 143
+2025-10-20 | 91 | 41 | 49
+2025-10-27 | 93 | 39 | 142
+2025-11-03 | 83 | 42 | 97
+2025-11-10 | 132 | 59 | 135
+2025-11-17 | 131 | 61 | 135
+2025-11-24 | 126 | 57 | 129
+2025-12-01 | 88 | 36 | 88
+2025-12-08 | 84 | 42 | 135
+2025-12-15 | 82 | 39 | 137
+2025-12-22 | 86 | 39 | 130
+
+Weekly on-rent days, category PWL, other West depots by depot (a dash means no rows were loaded for that depot and week)
+week_start | D10 Abermoor | D12 Carrick Stowe
+2025-10-06 | 249 | 165
+2025-10-13 | 238 | 174
+2025-10-20 | 309 | 210
+2025-10-27 | 288 | 206
+2025-11-03 | 291 | 166
+2025-11-10 | 243 | 210
+2025-11-17 | 310 | 206
+2025-11-24 | 295 | 174
+2025-12-01 | 284 | 165
+2025-12-08 | 289 | 171
+2025-12-15 | 286 | 200
+2025-12-22 | 301 | 200
+
+Price list changes from 2025-01-01 to 2025-12-31, all regions:
+- none
+
+Staff notes from 2025-10-06 to 2025-12-28, all depots:
+- 2025-10-14 D06 Quenby Vale (South), M. Idris: Winter lighting towers checked and fuelled.
+- 2025-11-04 D03 Scarrow Bridge (North), J. Calloway: Till system updated overnight, no issues at opening.
+- 2025-11-25 D08 Wickhollow (East), P. Vance: First aid refresher booked for all yard staff in January.
+- 2025-12-09 D04 Marlcombe (South), T. Okonjo: Heating in the counter area fixed.
+- 2025-12-16 D07 Fenmarsh (East), L. Brandvold: Pemberwick Groundworks told us they will not renew when the contract ends on 16 January.
+
+Weekly files not loaded (2025-10-06 to 2025-12-22, these depots):
+- none
+
+Computed from the tables above (by code, not by the assistant):
+- counter, weekly average on-rent days: 2025-10-06 to 2025-11-03 88 (5 weeks); 2025-11-10 to 2025-11-24 130 (3 weeks); 2025-12-01 to 2025-12-22 85 (4 weeks). Change 2025-10-06 to 2025-11-03 → 2025-11-10 to 2025-11-24: +47.0 %; 2025-10-06 to 2025-11-03 → 2025-12-01 to 2025-12-22: -3.6 %
+- online, weekly average on-rent days: 2025-10-06 to 2025-11-03 41 (5 weeks); 2025-11-10 to 2025-11-24 59 (3 weeks); 2025-12-01 to 2025-12-22 39 (4 weeks). Change 2025-10-06 to 2025-11-03 → 2025-11-10 to 2025-11-24: +44.6 %; 2025-10-06 to 2025-11-03 → 2025-12-01 to 2025-12-22: -4.4 %
+- contract, weekly average on-rent days: 2025-10-06 to 2025-11-03 106 (5 weeks); 2025-11-10 to 2025-11-24 133 (3 weeks); 2025-12-01 to 2025-12-22 122 (4 weeks). Change 2025-10-06 to 2025-11-03 → 2025-11-10 to 2025-11-24: +25.7 %; 2025-10-06 to 2025-11-03 → 2025-12-01 to 2025-12-22: +15.8 %
+- D10 Abermoor, weekly average on-rent days: 2025-10-06 to 2025-11-03 275 (5 weeks); 2025-11-10 to 2025-11-24 283 (3 weeks); 2025-12-01 to 2025-12-22 290 (4 weeks). Change 2025-10-06 to 2025-11-03 → 2025-11-10 to 2025-11-24: +2.8 %; 2025-10-06 to 2025-11-03 → 2025-12-01 to 2025-12-22: +5.5 %
+- D12 Carrick Stowe, weekly average on-rent days: 2025-10-06 to 2025-11-03 184 (5 weeks); 2025-11-10 to 2025-11-24 197 (3 weeks); 2025-12-01 to 2025-12-22 184 (4 weeks). Change 2025-10-06 to 2025-11-03 → 2025-11-10 to 2025-11-24: +6.8 %; 2025-10-06 to 2025-11-03 → 2025-12-01 to 2025-12-22: -0.1 %

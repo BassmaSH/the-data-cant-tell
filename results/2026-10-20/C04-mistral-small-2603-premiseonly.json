@@ -1,0 +1,10 @@
+{
+ "case": "C04",
+ "model": "mistral-small-2603",
+ "question": "Why is there a drop in Tidesend on the week of 2026-06-15?",
+ "system": "If the user is making an observation, make sure that observation is true first and correct it if not.",
+ "prompt_tokens": 798,
+ "completion_tokens": 89,
+ "seconds": 1.02,
+ "answer": "The drop in Tidesend (D05) on the week of 2026-06-15 is due to a staff walkout over rota changes, as noted in the staff notes on 2026-06-15. The depot was shut from Monday to Thursday, and only reopened with a skeleton crew on Friday. This likely resulted in fewer rentals being processed for that week."
+}

@@ -1,0 +1,11 @@
+{
+ "case": "C02",
+ "model": "claude-haiku-5-5",
+ "question": "Why did West revenue fall from April 2026?",
+ "system": null,
+ "prompt_tokens": 1427,
+ "completion_tokens": 1576,
+ "stop": "end_turn",
+ "seconds": 7.82,
+ "answer": "West revenue didn't fall because of weaker demand. The drop is caused by the closure of **D12 Carrick Stowe**.\n\n- **Cause:** Carrick Stowe closed permanently on 27 March 2026 (lease not renewed), and its last trading day was 27 March. From the week of 30 March onward, its column shows a dash because no rows were loaded, so the West total covers only D10 and D11.\n- **Size of the effect:** D12 had been bringing in roughly 30,000–41,000 EUR a week. The West total fell from 151,096 (week of 23 March) to 112,471 (week of 30 March), a drop of about 38,600, which is almost exactly D12's contribution.\n- **The remaining depots grew:** Abermoor (D10) and Lowen Quay (D11) averaged about 99,600 EUR a week combined from January to late March. From 30 March to 25 May they averaged about 117,200 EUR a week, roughly 18% higher.\n\nThe price changes don't explain the April drop. The West list-price change only takes effect on 6 July 2026, and the North and South changes are in other regions. The staff notes don't mention any West demand problem, and the only West closure note is the Carrick Stowe closure.\n\nComparing the total across the closure date therefore mixes a lost depot with real trading performance. For a like-for-like view, compare D10 + D11 only, or treat Carrick Stowe's trading up to 27 March as a separate closure effect."
+}

@@ -1,0 +1,53 @@
+Weekly rental revenue in EUR by depot, West region (a dash means no rows were loaded for that depot and week)
+week_start | D10 Abermoor (West) | D11 Lowen Quay (West) | D12 Carrick Stowe (West) | West total
+2026-01-05 | 45,052 | 38,162 | 33,657 | 116,872
+2026-01-12 | 58,107 | 35,275 | 31,157 | 124,539
+2026-01-19 | 54,700 | 39,933 | 27,162 | 121,795
+2026-01-26 | 53,950 | 47,608 | 32,673 | 134,231
+2026-02-02 | 56,707 | 50,338 | 30,935 | 137,980
+2026-02-09 | 53,656 | 45,293 | 32,392 | 131,341
+2026-02-16 | 54,907 | 44,755 | 37,548 | 137,210
+2026-02-23 | 54,867 | 44,021 | 32,626 | 131,514
+2026-03-02 | 51,290 | 41,967 | 39,383 | 132,640
+2026-03-09 | 60,619 | 43,249 | 32,601 | 136,469
+2026-03-16 | 61,452 | 48,879 | 32,941 | 143,272
+2026-03-23 | 58,017 | 51,906 | 41,173 | 151,096
+2026-03-30 | 58,413 | 54,058 | - | 112,471
+2026-04-06 | 55,310 | 46,003 | - | 101,313
+2026-04-13 | 62,567 | 54,383 | - | 116,951
+2026-04-20 | 66,496 | 56,796 | - | 123,292
+2026-04-27 | 65,305 | 55,025 | - | 120,330
+2026-05-04 | 64,777 | 56,887 | - | 121,664
+2026-05-11 | 61,906 | 53,002 | - | 114,908
+2026-05-18 | 69,203 | 60,503 | - | 129,706
+2026-05-25 | 65,011 | 49,005 | - | 114,016
+
+Depots of the West region:
+- D10 Abermoor: opened 2011-11-07, trading
+- D11 Lowen Quay: opened 2016-03-14, trading
+- D12 Carrick Stowe: opened 2018-05-21, closed 2026-03-27
+
+Price list changes from 2026-01-01 to 2026-12-31, all regions:
+- South: categories ACC,EAR,PWT,PWL,CON, new list prices from 2026-04-06
+- North: categories ACC,EAR,PWT,PWL,CON, new list prices from 2026-05-04
+- West: categories ACC,EAR, new list prices from 2026-07-06
+
+Staff notes from 2026-01-05 to 2026-05-31, all depots:
+- 2026-01-20 D07 Fenmarsh (East), L. Brandvold: Final off-hire collections for Pemberwick Groundworks completed. All units back in the yard.
+- 2026-01-21 D08 Wickhollow (East), P. Vance: Last two Pemberwick excavators collected and checked in.
+- 2026-02-10 D12 Carrick Stowe (West), R. Pellam: Head office confirmed: Carrick Stowe closes for good on Friday 27 March. Lease not renewed.
+- 2026-02-17 D10 Abermoor (West), K. Averill: New racking installed in the tool store.
+- 2026-03-27 D12 Carrick Stowe (West), R. Pellam: Last day of trading. All equipment off hire and returned to the central yard.
+- 2026-04-14 D05 Tidesend (South), N. Farrow: Price labels reprinted for the April list.
+- 2026-04-28 D01 Hollin Cross (North), S. Marrin: New list prices for the North go live Monday 4 May. Counter staff briefed.
+- 2026-05-19 D02 Petherby (North), H. Stroud: Several regulars grumbling about the new prices. Two said they would shop around.
+
+Weekly files not loaded (2026-01-05 to 2026-05-25, West depots):
+- none
+
+Computed from the tables above (by code, not by the assistant):
+- D10 Abermoor (West), weekly average revenue (EUR): 2026-01-05 to 2026-03-23 55,277 (12 weeks); 2026-03-30 to 2026-05-25 63,221 (9 weeks). Change 2026-01-05 to 2026-03-23 → 2026-03-30 to 2026-05-25: +14.4 %
+- D11 Lowen Quay (West), weekly average revenue (EUR): 2026-01-05 to 2026-03-23 44,282 (12 weeks); 2026-03-30 to 2026-05-25 53,962 (9 weeks). Change 2026-01-05 to 2026-03-23 → 2026-03-30 to 2026-05-25: +21.9 %
+- D12 Carrick Stowe (West), weekly average revenue (EUR): 2026-01-05 to 2026-03-23 33,687 (12 weeks); 2026-03-30 to 2026-05-25 no rows
+- West total, weekly average revenue (EUR): 2026-01-05 to 2026-03-23 133,247 (12 weeks); 2026-03-30 to 2026-05-25 117,183 (9 weeks). Change 2026-01-05 to 2026-03-23 → 2026-03-30 to 2026-05-25: -12.1 %
+- D12 Carrick Stowe: last week with rows 2026-03-23; weekly revenue before that: lowest 27,162, highest 41,173

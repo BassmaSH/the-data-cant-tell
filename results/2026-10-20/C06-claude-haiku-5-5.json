@@ -1,0 +1,11 @@
+{
+ "case": "C06",
+ "model": "claude-haiku-5-5",
+ "question": "Why did North revenue drop on the week of 2026-07-13?",
+ "system": "Don't say anything that isn't clearly supported by the data. If you are unable to answer something with the data, say so.",
+ "prompt_tokens": 843,
+ "completion_tokens": 785,
+ "stop": "end_turn",
+ "seconds": 4.59,
+ "answer": "North revenue did not drop in the week of 2026-07-13. The apparent drop comes from a missing data load.\n\n- **D03 Scarrow Bridge** has no figure for that week. The file is marked \"status missing, 0 rows,\" so its revenue is unknown, not zero. It had 59,593 the previous week.\n- **D01 Hollin Cross** rose slightly, from 79,910 to 79,960.\n- **D02 Petherby** rose from 46,873 to 56,469.\n\nIf you total only the depots that loaded, North falls from 186,376 to 136,429. That fall is entirely the missing D03 row. The data doesn't show D03's actual revenue for that week, so I can't say whether it changed.\n\nThe staff notes and price changes don't explain a real drop either. No note covers a North depot for that week, and North's new list prices took effect on 2026-05-04."
+}

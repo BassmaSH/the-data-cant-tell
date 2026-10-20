@@ -1,0 +1,11 @@
+{
+ "case": "C05",
+ "model": "mistral-large-4-0",
+ "question": "Why is the South's average daily rate lower this summer than last summer? We didn't cut prices.",
+ "system": null,
+ "prompt_tokens": 604,
+ "completion_tokens": 1846,
+ "stop": "stop",
+ "seconds": 49.92,
+ "answer": "The South's average daily rate (ADR) dropped from **€34.05 to €29.82** not because of price cuts, but because of a **shift in the equipment mix** toward lower-rate categories.\n\nWhile list prices actually **increased** across all South categories in April 2026 (and every category's ADR rose year-over-year), the proportion of rental days shifted heavily toward **Power tools (PWT)**—the lowest-rate category—and away from high-rate categories like **Access (ACC)** and **Earthmoving (EAR)**.\n\n### The mix shift in numbers:\n\n| Category | ADR FY2026 | ADR FY2027 | Days FY2026 | Days FY2027 | Share of Days FY2026 | Share of Days FY2027 |\n|----------|------------|------------|-------------|-------------|---------------------|---------------------|\n| **ACC Access** | €53.68 | €55.92 | 9,782 | 8,291 | 17.3% | **12.7%** ↓ |\n| **EAR Earthmoving** | €103.36 | €107.35 | 6,013 | 4,464 | 10.7% | **6.9%** ↓ |\n| **PWT Power tools** | €14.55 | €15.15 | 23,485 | 33,509 | 41.6% | **51.5%** ↑ |\n| **PWL Power & lighting** | €29.26 | €30.49 | 7,026 | 7,116 | 12.5% | 10.9% |\n| **CON Concrete** | €22.44 | €23.35 | 10,110 | 11,700 | 17.9% | 18.0% |\n\n### Why this lowers the overall average:\n- **Power tools** (ADR ~€15) grew from **42% to 52%** of total on-rent days (+10,024 days)\n- **Earthmoving** (ADR ~€107) and **Access** (ADR ~€56) together lost **3,834 days**, dropping from 28% to 20% of the mix\n\nEven though you charged **more per day** for every single category (e.g., Earthmoving up from €103.36 to €107.35), the overall average is pulled down because you rented proportionally far more cheap-to-rent power tools and fewer expensive-to-rent access platforms and earthmoving equipment.\n\n**Bottom line:** Revenue actually rose slightly (€1.92M → €1.94M) because total on-rent days jumped 15% (56,416 → 65,080), but the \"average\" rate fell because the extra volume came from your lowest-priced category."
+}

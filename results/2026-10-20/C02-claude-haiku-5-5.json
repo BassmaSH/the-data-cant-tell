@@ -1,0 +1,11 @@
+{
+ "case": "C02",
+ "model": "claude-haiku-5-5",
+ "question": "Why did West revenue fall from April 2026?",
+ "system": "Don't say anything that isn't clearly supported by the data. If you are unable to answer something with the data, say so.",
+ "prompt_tokens": 1463,
+ "completion_tokens": 1949,
+ "stop": "end_turn",
+ "seconds": 9.8,
+ "answer": "West revenue didn't fall in April because of trading performance. The drop comes from the closure of Carrick Stowe (D12).\n\n- **Carrick Stowe closed.** Staff notes confirm it traded its last day on 27 March 2026, with the lease not renewed. D12 earned 41,173 EUR in the week of 23 March, and its row shows \"-\" from the week of 30 March onward. West's total fell from 151,096 (23 March) to 112,471 (30 March).\n- **Abermoor and Lowen Quay did not decline.** Their combined weekly revenue averaged about 100,500 EUR over the 13 weeks from January to March, and about 117,800 EUR over the 8 weeks from 6 April to 25 May.\n- **The West price changes don't explain it.** West's new list prices start on 6 July 2026, so they weren't in effect in April.\n\nThe week of 6 April (101,313 EUR) is the lowest total in the period, with both Abermoor and Lowen Quay lower than the weeks around it. The data doesn't say why, so I can't explain that week."
+}

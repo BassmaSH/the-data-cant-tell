@@ -1,0 +1,11 @@
+{
+ "case": "C03",
+ "model": "claude-sonnet-5-5",
+ "question": "Why did East contract revenue fall from late January 2026?",
+ "system": "Don't say anything that isn't clearly supported by the data. If you are unable to answer something with the data, say so.",
+ "prompt_tokens": 1497,
+ "completion_tokens": 2378,
+ "stop": "end_turn",
+ "seconds": 18.82,
+ "answer": "**Short answer:** The data points to the end of the Pemberwick Groundworks contract at Fenmarsh and Wickhollow. It does not prove that, because the revenue figures aren't broken down by customer.\n\n**What the numbers show**\n- The East total averaged about 55,450 EUR/week from 3 Nov to 5 Jan (10 weeks). From 12 Jan to 30 Mar (12 weeks) it averaged about 46,180, roughly 17% lower.\n- The step down starts in the week of 12 Jan (42,239, from 55,691 the week before), slightly earlier than \"late January\".\n- The low point was mid-February (39,703 in the week of 9 Feb and 38,196 in the week of 16 Feb). Revenue partly recovered in March, reaching 52,315 and 52,477 in two of the weeks.\n- The fall is concentrated in two depots:\n  - Fenmarsh averaged about 23,780 before and 17,270 after, a drop of about 6,500/week.\n  - Wickhollow averaged about 17,350 before and 13,710 after, a drop of about 3,600/week.\n  - Dunstrand did not fall. It averaged about 14,320 before and 15,200 after.\n\n**What the staff notes say**\n- 16 Dec, Fenmarsh: Pemberwick Groundworks said they would not renew when their contract ended on 16 January.\n- 20 Jan, Fenmarsh: final Pemberwick off-hire collections were completed.\n- 21 Jan, Wickhollow: the last two Pemberwick excavators were collected.\n\nThe loss of this customer fits the timing and the depots where revenue fell.\n\n**What I can't confirm**\n- How much of the drop was Pemberwick. There is no customer-level revenue, so I can't put a figure on it.\n- Why revenue was already lower in the week of 12 Jan, before the contract end date of 16 Jan. The notes don't explain this.\n- Why revenue recovered somewhat in March. Nothing in the data explains it.\n- Whether other factors, such as seasonality, played a part. There is no earlier-year data to compare against.\n\nThe other possible explanations in the data don't apply to East. There are no missing weekly files, and the price changes and the Carrick Stowe closure affect other regions, not East."
+}

@@ -1,0 +1,11 @@
+{
+ "case": "C06",
+ "model": "mistral-large-4-0",
+ "question": "Why did North revenue drop on the week of 2026-07-13?",
+ "system": null,
+ "prompt_tokens": 611,
+ "completion_tokens": 1658,
+ "stop": "stop",
+ "seconds": 57.88,
+ "answer": "North revenue dropped on the week of **2026-07-13** because **D03 Scarrow Bridge (North) had no data loaded** for that week.\n\nAccording to the \"Weekly files not loaded\" section, D03 had **\"status missing, 0 rows\"** for 2026-07-13, which is why it shows a dash (–) in the revenue table. This missing depot accounts for roughly **€60,000** of the apparent drop (based on D03's typical weekly revenue of €59k–€63k in surrounding weeks).\n\nThe other North depots actually performed normally or better that week:\n*   **D01 Hollin Cross:** €79,960 (up slightly from €79,910 the previous week)\n*   **D02 Petherby:** €56,469 (up from €46,873 the previous week)\n\nSo the decline is purely a data gap, not an actual drop in rental activity at D03."
+}

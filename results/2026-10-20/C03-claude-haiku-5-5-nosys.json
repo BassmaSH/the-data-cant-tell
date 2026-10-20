@@ -1,0 +1,11 @@
+{
+ "case": "C03",
+ "model": "claude-haiku-5-5",
+ "question": "Why did East contract revenue fall from late January 2026?",
+ "system": null,
+ "prompt_tokens": 1461,
+ "completion_tokens": 2257,
+ "stop": "end_turn",
+ "seconds": 10.6,
+ "answer": "East contract revenue fell from late January mainly because **Pemberwick Groundworks, a contract customer at Fenmarsh (D07) and Wickhollow (D08), stopped hiring.** The staff notes show:\n\n- **16 Dec 2025:** Pemberwick told Fenmarsh it would not renew when its contract ended on 16 January.\n- **16 Jan 2026:** The contract ended.\n- **20 Jan 2026:** Fenmarsh completed the final off-hire collections, and all units were back in the yard.\n- **21 Jan 2026:** Wickhollow collected and checked in the last two Pemberwick excavators.\n\nThe timing matches the revenue data. The East total averaged about 54,400 a week for 1 December to 5 January, and about 46,500 a week from 19 January to 30 March, roughly 8,000 a week (15%) lower. The drop came almost entirely from D07 and D08:\n\n- **Fenmarsh (D07):** about 22,200 a week before, about 17,400 after.\n- **Wickhollow (D08):** about 17,000 a week before, about 13,700 after.\n- **Dunstrand (D09):** little change.\n\nTwo caveats:\n\n- **The data does not tag revenue by customer**, so the link to Pemberwick is an inference from timing and the staff notes, not a direct breakdown. It is the only East contract-end event in the notes, and the decline is concentrated in the two depots where Pemberwick worked.\n- **Revenue has partly recovered but not fully.** Fenmarsh was back to 18,000–22,000 in March, but Wickhollow has stayed around 13,000–16,000, so the loss of that customer has not been fully replaced.\n\nThe data shows no missing weeks and no price-list changes for the East region, so neither explains the drop. The Carrick Stowe closure is in the West region and does not affect the East figures."
+}

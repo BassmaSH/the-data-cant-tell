@@ -1,0 +1,11 @@
+{
+ "case": "C04",
+ "model": "mistral-large-4-0",
+ "question": "Why is there a drop in Tidesend on the week of 2026-06-15?",
+ "system": "Don't say anything that isn't clearly supported by the data. If you are unable to answer something with the data, say so.",
+ "prompt_tokens": 775,
+ "completion_tokens": 178,
+ "stop": "stop",
+ "seconds": 2.08,
+ "answer": "Based on the data provided, the drop in Tidesend on the week of 2026-06-15 is explained by a staff walkout.\n\nFrom the staff notes:\n- **2026-06-15 D05 Tidesend (South), N. Farrow**: \"Staff walkout over rota changes. Depot shut Monday to Thursday, reopened Friday with a skeleton crew. No new hires could be issued while shut.\"\n- **2026-06-22 D05 Tidesend (South), N. Farrow**: \"Back to normal staffing from today.\"\n\nThis explains the 59.7% drop in on-rent days (from an average of 1,938 to 781), as the depot was shut for four days of that week and operated with only a skeleton crew on Friday, with no new hires possible during the closure."
+}

@@ -1,0 +1,11 @@
+{
+ "case": "C07",
+ "model": "claude-haiku-5-5",
+ "question": "What happened between 2025-11-10 and 2025-11-24 at D11 Lowen Quay?",
+ "system": "Answer in four steps:\n1. Read the data the question is about.\n2. Check that the user's observation is true; correct it only if the data says otherwise.\n3. Check whether the data is enough to answer.\n4. If it is, answer with what the data shows. If not, say what's missing. Call any guess a guess.",
+ "prompt_tokens": 995,
+ "completion_tokens": 1182,
+ "stop": "end_turn",
+ "seconds": 7.01,
+ "answer": "Between 2025-11-10 and 2025-11-24, on-rent days at D11 Lowen Quay for category PWL rose for two channels and then fell back.\n\n- **Counter:** about 126–132 days a week, up from roughly 83–93 in the weeks before and 82–88 after.\n- **Online:** about 57–61 days a week, up from roughly 36–42 before and after.\n- **Contract:** 129–135 days a week. Contract volumes were already high and volatile before this period (98 to 143), so this doesn't show a clear change.\n\nThe rise lasted three weeks. By 2025-12-01 the counter and online figures were back to their earlier levels.\n\nThe data doesn't explain the cause:\n\n- No staff note mentions D11 in this period.\n- The price list had no changes all year.\n- The other West depots don't show the same pattern. D10 Abermoor stayed around 280–300 through the window, and D12 Carrick Stowe was flat (165–210).\n\nA guess is that something local to D11 drove extra counter and online hires for those three weeks, such as a one-off event, a customer's project, or a fleet or transfer change. Nothing in this data confirms that. Checking D11's booking records, transfers, or fleet movements for those weeks would show what actually happened."
+}

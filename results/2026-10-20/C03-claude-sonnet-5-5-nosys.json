@@ -1,0 +1,11 @@
+{
+ "case": "C03",
+ "model": "claude-sonnet-5-5",
+ "question": "Why did East contract revenue fall from late January 2026?",
+ "system": null,
+ "prompt_tokens": 1461,
+ "completion_tokens": 2210,
+ "stop": "end_turn",
+ "seconds": 16.56,
+ "answer": "**Most likely cause: East lost the Pemberwick Groundworks contract, which ended on 16 January 2026.** The data fits this, but it doesn't show Pemberwick's revenue directly, so this is an inference.\n\n**What changed**\n- East total averaged about €55.4k/week from 3 Nov to 29 Dec. From February to March it averaged about €46.0k, a fall of roughly €9.4k a week (about 17%).\n- The drop comes from two depots, with the third slightly up:\n\n| Depot | Nov–Dec avg | Feb–Mar avg | Change |\n|---|---|---|---|\n| D07 Fenmarsh | ~€24.1k | ~€16.8k | about –€7.3k |\n| D08 Wickhollow | ~€17.2k | ~€13.7k | about –€3.5k |\n| D09 Dunstrand | ~€14.1k | ~€15.6k | about +€1.5k |\n\n**Why Pemberwick fits**\n- On 16 Dec, Fenmarsh noted that Pemberwick Groundworks would not renew when the contract ended on 16 January.\n- Fenmarsh finished the final off-hire collections on 20 Jan. Wickhollow collected its last two Pemberwick excavators on 21 Jan.\n- The depots that lost revenue are the two that held Pemberwick equipment. Dunstrand has no Pemberwick note and did not decline.\n- The timing matches. East total fell from €55.7k to €42.2k in the week of 12 Jan, and has mostly stayed below about €50k since, apart from €52k in the weeks of 16 Mar and 30 Mar.\n\n**Caveats**\n- Fenmarsh stayed around €20k in the weeks of 19 and 26 Jan, then fell in February. That is probably the tail of the contract (final billing or off-hire), but the data doesn't confirm it.\n- Weekly figures are volatile. Fenmarsh was already trending down in December, and Wickhollow had weeks at €12k and €14k in Nov–Dec. Not all of the decline needs to be Pemberwick.\n- To confirm, I'd need contract revenue split by customer. That would show Pemberwick's weekly billing at D07 and D08 and whether the remaining gap is something else.\n\n**Ruled out**\n- There are no missing weekly files for East.\n- The price list changes only affect South, North and West, and start after this period.\n- The Carrick Stowe closure is a West depot."
+}

@@ -1,0 +1,11 @@
+{
+ "case": "C01",
+ "model": "claude-haiku-5-5",
+ "question": "Why are North rentals down on last year since May?",
+ "system": "Don't say anything that isn't clearly supported by the data. If you are unable to answer something with the data, say so. If the user is making an observation, make sure that observation is true first and correct it if not.",
+ "prompt_tokens": 1687,
+ "completion_tokens": 2907,
+ "stop": "end_turn",
+ "seconds": 13.93,
+ "answer": "North rentals are down on last year from mid-May, but the data can't tell us why. The price change is the most obvious timing match, but it isn't proven as the cause.\n\n**What the data shows**\n\n- **The decline starts the week of 11 May, not 4 May.** The week of 4 May was slightly up (4,686 vs 4,676). Every week from 11 May onward is below the same week last year.\n- **Overall gap:** From 4 May to 22 June, North had 38,149 on-rent days vs 41,808 in the matching 2025 weeks, down 3,659 (about 8.8%).\n- **Before May, the two years were roughly level.** The April weeks were mixed, with 2026 sometimes above and sometimes below 2025.\n- **All three depots are down.** Scarrow Bridge fell most (about 10.6%), Hollin Cross about 8.4%, and Petherby about 7.3%. So this isn't confined to one depot.\n\n**Timing against the price change**\n\nNorth's new list prices went live on 4 May. The decline appears a week later, which fits the price change being a factor, but the data doesn't establish that. Other things could also explain it, and the data doesn't include prices paid, customer numbers, fleet size, or local market conditions.\n\n**Staff notes**\n\nOn 19 May, Petherby staff reported regulars grumbling about the new prices and two saying they would shop around. This is anecdotal, and Petherby had the smallest drop of the three depots. Scarrow Bridge had the largest drop and no related note.\n\n**What I can't tell from this data**\n\n- Whether the price change caused the drop.\n- Whether 2025 was an unusually strong June. There's only one prior year, so normal seasonal patterns can't be separated out.\n- Anything about the cause at Scarrow Bridge, since no notes cover it.\n\nTo test the price explanation, you'd want data on rentals by customer type or account, quotes or enquiries before and after 4 May, and ideally a comparison with a region that didn't change prices."
+}
