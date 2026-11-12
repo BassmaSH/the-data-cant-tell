@@ -7,13 +7,13 @@ data (a staff walkout, a depot that closed, a customer whose contract ended). So
 honest answer is "the data doesn't say". I wanted to know how often and under which conditions models give that
 answer.
 
-Nine questions about an invented rental company, six models (Mistral Small, Mistral Large 2512, Mistral Large 4
+Nine questions about an invented rental company, six models (Mistral Small, Mistral Large 3 (`mistral-large-2512`), Mistral Large 4
 with and without reasoning, Claude Haiku, Sonnet and Opus), up to six ways of instructing them, about 320 answers
 graded on four questions each. Every prediction was written before the run.
 
 ## What I found
 
-1. **No system message means invented causes.** Asked "why did X drop?" with no instruction, Mistral Large 2512
+1. **No system message means invented causes.** Asked "why did X drop?" with no instruction, Mistral Large 3
    invented a cause in 8 answers out of 10, Mistral Small in 6. One sentence of system message ("Don't say anything
    that isn't clearly supported by the data. If you are unable to answer something with the data, say so.") took
    that to 1.
@@ -79,7 +79,7 @@ it could contain price just to say that price is not a factor"*. The first real 
 | none | — |
 | system message | "Don't say anything that isn't clearly supported by the data. If you are unable to answer something with the data, say so." |
 | + my sentence | the same, plus "If the user is making an observation, make sure that observation is true first and correct it if not." |
-| my sentence alone | the sentence only (Mistral 2512 and Small only) |
+| my sentence alone | the sentence only (Mistral Large 3 and Small only) |
 | steps | "Answer in four steps: 1. Read the data the question is about. 2. Check that the user's observation is true; correct it only if the data says otherwise. 3. Check whether the data is enough to answer. 4. If it is, answer with what the data shows. If not, say what's missing. Call any guess a guess." |
 | computed figures | the system message, and the data block plus the figures the question needs, computed by code (Mistral Small and Large 4 only) |
 
@@ -93,7 +93,7 @@ Fully right answers out of 10 (nine cases, C05 in two versions), one call each:
 | model | none | system message | + my sentence | steps | computed figures |
 |---|---|---|---|---|---|
 | Mistral Small 2603 | 1 | 3 | 3 | 4 | 4 |
-| Mistral Large 2512 | 0 | 4 | 3 | 4 | — |
+| Mistral Large 3 | 0 | 4 | 3 | 4 | — |
 | Mistral Large 4, reasoning off | 3 | 4 | 5 | 3 | **9** |
 | Mistral Large 4, reasoning high | 5 | 7 | **9** | 6 | — |
 | Claude Haiku 5.5 | 5 | 7 | 6 | 3 | — |
@@ -105,14 +105,14 @@ Cost and speed of each model's best set-up:
 | model, best set-up | fully right | cost per 1,000 answers | cost per 1,000 fully right answers | seconds per answer (median) |
 |---|---|---|---|---|
 | Mistral Small, steps | 4 | $0.49 | $1.23 | 3.5 |
-| Mistral Large 2512, system message | 4 | $1.18 | $2.94 | 6.3 |
+| Mistral Large 3, system message | 4 | $1.18 | $2.94 | 6.3 |
 | **Mistral Large 4 reasoning off, computed figures** | **9** | $3.01 | **$3.34** | **3.3** |
 | Mistral Large 4 reasoning high, + my sentence | 9 | $10.33 | $11.48 | 43.8 |
 | Claude Haiku, system message | 7 | $0.98 | $1.40 | 9.6 |
 | Claude Sonnet, system message | 7 | $17.11 | $24.44 | 12.6 |
 | Claude Opus, system message | 8 | $36.02 | $45.02 | 14.5 |
 
-List prices per million tokens (input / output): Mistral Small $0.15 / $0.60, Large 2512 $0.50 / $1.50, Large 4
+List prices per million tokens (input / output): Mistral Small $0.15 / $0.60, Large 3 $0.50 / $1.50, Large 4
 $1.36 / $4.18 (a third-party list price; Large 4 was in public preview and not on Mistral's pricing page), Claude
 Haiku 5.5 $0.10 / $0.50, Sonnet 5.5 $2 / $10, Opus 5.5 $4 / $20. Thinking tokens are billed and counted.
 
@@ -123,7 +123,7 @@ run, with each prediction next to its result, in `NOTEBOOK.md`.
 
 **My sentence helped the large model a little and over-corrected.** Alone, it is not something I would use: *it
 orients the model mainly towards correcting assumptions*, so it "corrected" true ones. Asked about C05 ("we didn't
-cut prices", which is true), Mistral Large 2512 with the sentence alone wrote a section titled "Correcting a potential
+cut prices", which is true), Mistral Large 3 with the sentence alone wrote a section titled "Correcting a potential
 misconception". Added to the system message, it helped the large models slightly and did nothing for the small one.
 
 **Steps helped only the small model.** Four steps took Mistral Small to zero invented causes, its best result
@@ -179,7 +179,7 @@ moved the start earlier to fit a bigger drop. Opus was the only model to flag it
 ```bash
 python -m venv .venv && .venv/bin/pip install -r requirements.txt
 export MISTRAL_API_KEY=...          # and ANTHROPIC_API_KEY for the Claude models
-.venv/bin/python run_cases.py mistral-large-2512                 # every case, Small and Large 2512, system message
+.venv/bin/python run_cases.py mistral-large-2512                 # every case, Small and Large 3, system message
 .venv/bin/python run_cases.py x --models claude-haiku-5-5 --steps   # any model list, any set-up
 .venv/bin/python run_cases.py x --data computed --models mistral-large-4-0 --reasoning none
 ```
