@@ -60,5 +60,6 @@ other than C06 are that sentence written out: fully right means not invented, sh
 `combine.py` computes the costs of this run from the token counts saved with the 20 answers. Three of the
 four cost figures come out as published ($3.01 and $0.41 per 1,000 answers, $1.03 per 1,000 fully right answers
 for Small). For Large 4, the cost per 1,000 fully right answers comes out at $3.347, printed as $3.35; the
-notebook and the README say $3.34. The published figure is $3.01 divided by 0.9: it was computed from the cost
-per 1,000 answers after rounding ($3.012 before rounding). The README and the notebook are left as they are.
+notebook and the README say $3.34. $3.34 is what $3.01 divided by 0.9 gives, that is, the cost per 1,000
+answers after rounding, divided by the share of fully right answers; before rounding that cost is $3.012. The
+README and the notebook are left as they are.

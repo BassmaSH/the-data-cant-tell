@@ -12,7 +12,7 @@ here.
 pip install ruff==0.17.5 pytest
 ruff format .                          # rewrites the files in the agreed style
 ruff check .                           # reports what breaks a rule
-pytest -q                              # 63 checks, no API call, no key
+pytest -q                              # 67 checks, no API call, no key
 python grading/2026-10-20/combine.py   # the published tables, rebuilt from the grading files
 python data/check_data.py              # the nine planted episodes, recomputed from the database
 ```
@@ -70,8 +70,9 @@ of them must show that the published numbers still follow:
 Three rules for the records:
 
 - **Saved answers are never replaced.** `run_cases.py` writes to a folder named after the day of
-  the run. A new run gets a new folder, and its prediction is written in `NOTEBOOK.md` before it
-  is run.
+  the run, and stops before any call if an answer of the same name is already there; `--tag`
+  gives a second run of the same day its own names. The prediction of a run is written in
+  `NOTEBOOK.md` before it is run.
 - **A verdict is never edited in place.** To change one, write the cell as `n → y` (the grader's
   verdict, then the one counted), and add the case, the rule and who changed it under "Verdicts
   changed after grading" in the same file. `combine.py` counts the right-hand verdict, and a test
@@ -87,7 +88,7 @@ Three rules for the records:
 - The data blocks of C04 and C06 to C09 have no script. `tests/test_case_data.py` compares the
   figures of their first table with the database; their notes, price changes and file lists are
   not compared.
-- `run_cases.py` is tested up to the call: which models, which system message, which file names.
-  No test calls a model.
+- `run_cases.py` is tested up to the call: which models, which system message, which file names,
+  and that it stops when a key is missing or an answer is already saved. No test calls a model.
 - `requirements.txt` gives lower bounds. The versions of the libraries used for the runs of
   October 2026 were not recorded.

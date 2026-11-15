@@ -25,9 +25,10 @@ from run_cases import PREMISE, SMALL, STEPS, SYSTEM  # noqa: E402
 RESULTS = ROOT / "results"
 README = (ROOT / "README.md").read_text()
 
-# Commands as they were written during the runs (NOTEBOOK.md, cases/*.md and the earlier usage
-# text of run_cases.py), with what each must still mean: models, system message, and one answer
-# file that the run of that day saved.
+# Commands in the form used for the runs, with what each must mean: the models, the system message,
+# and one answer file that the run of that day saved. The first eight and the two that start with
+# "x" are written in NOTEBOOK.md, the README or the earlier usage text of run_cases.py. The other
+# three combine the same options to reach an answer that no recorded command names.
 RECORDED = [
     (
         "mistral-large-2512",
@@ -180,6 +181,50 @@ def test_a_command_that_names_no_model_is_refused():
     for command in ([], ["C04"], ["--steps"], ["one-model", "another-model"]):
         with pytest.raises(ValueError):
             run_cases.plan_from(command)
+
+
+def test_a_word_shaped_like_a_case_that_does_not_exist_is_refused():
+    for command in (["--models", "a-model", "C10"], ["a-model", "c04"], ["a-model", "C4"]):
+        with pytest.raises(ValueError, match="no such case"):
+            run_cases.plan_from(command)
+
+
+def test_every_command_in_the_readme_stops_before_any_call_when_no_key_is_set(
+    monkeypatch: pytest.MonkeyPatch,
+):
+    monkeypatch.delenv("MISTRAL_API_KEY", raising=False)
+    monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+    today = ROOT / "results" / run_cases.date.today().isoformat()
+    existed = today.exists()
+    for command in [*readme_commands(), "models"]:
+        with pytest.raises(SystemExit) as stop:
+            run_cases.main(shlex.split(command))
+        assert "API_KEY not set: nothing was called" in str(stop.value), command
+    assert today.exists() == existed
+    assert run_cases.mistral_client.cache_info().currsize == 0
+    assert run_cases.claude_client.cache_info().currsize == 0
+
+
+def test_the_key_asked_for_is_the_one_of_the_models_named():
+    plan = run_cases.plan_from(["--models", "claude-haiku-5-5,mistral-large-4-0"])
+    folder = ROOT / "results" / "no-such-day"
+    assert run_cases.reason_not_to_run(plan, folder, {"MISTRAL_API_KEY": "k"}).startswith(
+        "ANTHROPIC_API_KEY not set"
+    )
+    assert run_cases.reason_not_to_run(plan, folder, {}).startswith(
+        "ANTHROPIC_API_KEY and MISTRAL_API_KEY not set"
+    )
+    both = {"MISTRAL_API_KEY": "k", "ANTHROPIC_API_KEY": "k"}
+    assert run_cases.reason_not_to_run(plan, folder, both) is None
+
+
+def test_a_saved_answer_is_never_replaced():
+    keys = {"MISTRAL_API_KEY": "k"}
+    plan = run_cases.plan_from(["mistral-large-2512", "--steps"])
+    reason = run_cases.reason_not_to_run(plan, RESULTS / "2026-10-20", keys)
+    assert reason.startswith("18 of these answers are already saved") and "--tag" in reason
+    again = run_cases.plan_from(["mistral-large-2512", "--steps", "--tag", "repeat2"])
+    assert run_cases.reason_not_to_run(again, RESULTS / "2026-10-20", keys) is None
 
 
 def test_two_set_ups_at_once_are_refused():

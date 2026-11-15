@@ -23,14 +23,16 @@ Other options:
     --data categories       reads <case>-data-categories.txt               (saved as -categories)
     --data computed         reads <case>-data-computed.txt                 (saved as -computed)
 
-Answers go to results/<today>/<case>-<model><set-up><reasoning><data><tag>.json, so the answers
-of an earlier day are never replaced.
+Answers go to results/<today>/<case>-<model><set-up><reasoning><data><tag>.json. A saved answer is
+never replaced: a command that would write over one stops before any call, and --tag gives the
+new answers another name. A command also stops before any call when the key it needs is not set.
 """
 
 import argparse
 import functools
 import json
 import os
+import re
 import sys
 import time
 from dataclasses import dataclass
@@ -41,6 +43,9 @@ from typing import Any
 HERE = Path(__file__).parent
 SMALL = "mistral-small-2603"
 MAX_TOKENS_CLAUDE = 16000  # room for the thinking and the answer
+CASE_SHAPED = re.compile(r"[Cc]\d+")
+MISTRAL_KEY = "MISTRAL_API_KEY"
+CLAUDE_KEY = "ANTHROPIC_API_KEY"
 
 SYSTEM = (
     "Don't say anything that isn't clearly supported by the data. "
@@ -179,10 +184,14 @@ def plan_from(argv: list[str]) -> Plan:
     """Turn the words of a command into what it runs.
 
     Raises:
-        ValueError: when the command names no model, or more than one outside --models.
+        ValueError: when the command names no model, more than one outside --models, or a case
+            that does not exist.
     """
     args = build_parser().parse_intermixed_args(argv)
     cases = [name for name in args.names if name in QUESTIONS]
+    unknown = [n for n in args.names if n not in QUESTIONS and CASE_SHAPED.fullmatch(n)]
+    if unknown:
+        raise ValueError(f"no such case: {', '.join(unknown)} (cases are C01 to C09)")
     system, tag = SETUPS[args.setup]
     if args.reasoning:
         tag += f"-r{args.reasoning}"
@@ -210,7 +219,7 @@ def mistral_client() -> Any:  # noqa: ANN401 (the library is imported only when 
     """Return the Mistral client, built on first use from MISTRAL_API_KEY."""
     from mistralai.client import Mistral
 
-    return Mistral(api_key=os.environ.get("MISTRAL_API_KEY", ""))
+    return Mistral(api_key=os.environ.get(MISTRAL_KEY, ""))
 
 
 @functools.cache
@@ -277,6 +286,35 @@ def ask(model: str, plan: Plan, user: str) -> Answer:
     return ask_mistral(model, plan.system, user, plan.reasoning)
 
 
+def key_for(model: str) -> str:
+    """Return the name of the environment variable that holds the key a model needs."""
+    return CLAUDE_KEY if model.startswith("claude-") else MISTRAL_KEY
+
+
+def reason_not_to_run(plan: Plan, folder: Path, environ: dict[str, str]) -> str | None:
+    """Check, before any call, that a plan can run and would replace nothing.
+
+    Args:
+        plan: what the command runs.
+        folder: where the answers would be saved.
+        environ: the environment variables.
+
+    Returns:
+        Why the plan must not run, or None when it can.
+    """
+    missing = sorted({key_for(m) for m in plan.models if not environ.get(key_for(m))})
+    if missing:
+        return f"{' and '.join(missing)} not set: nothing was called"
+    names = [plan.answer_name(case, model) for case in plan.cases for model in plan.models]
+    saved = [name for name in names if (folder / name).exists()]
+    if saved:
+        return (
+            f"{len(saved)} of these answers are already saved in {folder} (the first: {saved[0]}). "
+            "A saved answer is never replaced: add --tag to name the new ones"
+        )
+    return None
+
+
 def run(plan: Plan, folder: Path) -> None:
     """Ask every case to every model, save each answer in the folder and print it."""
     folder.mkdir(parents=True, exist_ok=True)
@@ -312,6 +350,8 @@ def main(argv: list[str] | None = None) -> None:
     if not argv:
         sys.exit(__doc__)
     if argv == ["models"]:
+        if not os.environ.get(MISTRAL_KEY):
+            sys.exit(f"run_cases.py: {MISTRAL_KEY} not set: nothing was called")
         for model in mistral_client().models.list().data:
             print(model.id)
         return
@@ -319,7 +359,11 @@ def main(argv: list[str] | None = None) -> None:
         plan = plan_from(argv)
     except ValueError as error:
         sys.exit(f"run_cases.py: {error}")
-    run(plan, HERE / "results" / date.today().isoformat())
+    folder = HERE / "results" / date.today().isoformat()
+    reason = reason_not_to_run(plan, folder, dict(os.environ))
+    if reason:
+        sys.exit(f"run_cases.py: {reason}")
+    run(plan, folder)
 
 
 if __name__ == "__main__":

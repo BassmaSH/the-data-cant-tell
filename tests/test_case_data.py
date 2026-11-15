@@ -4,7 +4,7 @@
 
 Three checks on the files of the repo. The blocks of C01, C02, C03 and C05 are the ones
 make_case_data.py builds. Every "-computed" block is the one make_computed.py builds. The blocks of
-C04 and C06 to C09 have no script: the figures of their tables are compared with the database.
+C04 and C06 to C09 have no script: every figure of their tables is compared with the database.
 
 Code written by Claude Code on Nov 15, 2026, for the author.
 """
@@ -22,32 +22,38 @@ import make_computed  # noqa: E402
 
 DATABASE = sqlite3.connect(f"file:{ROOT / 'data' / 'company.sqlite'}?mode=ro", uri=True)
 
-# The first table of each block that no script builds: what one cell is, as a query that takes the
-# week and the column's name. Depot columns start with the depot id; channel columns are the id.
+# Every table of the blocks that no script builds, in the order of the block: what one cell is, as
+# a query that takes the week and the column's name. Depot columns start with the depot id; channel
+# columns are the channel.
 BY_DEPOT = "SELECT SUM({measure}) FROM weekly_rentals WHERE week_start = ? AND depot_id = ?"
 HAND_MADE = {
-    "C04": (BY_DEPOT.format(measure="on_rent_days"), "depot", "days"),
-    "C06": (BY_DEPOT.format(measure="rental_revenue_cents"), "depot", "euros"),
-    "C08": (BY_DEPOT.format(measure="on_rent_days"), "depot", "days"),
-    "C07": (
-        "SELECT SUM(on_rent_days) FROM weekly_rentals WHERE week_start = ? AND channel = ? "
-        "AND depot_id = 'D11' AND category_id = 'PWL'",
-        "channel",
-        "days",
-    ),
-    "C09": (
-        "SELECT SUM(on_rent_days) FROM weekly_rentals JOIN depots USING (depot_id) "
-        "WHERE week_start = ? AND channel = ? AND region_id = 'R3'",
-        "channel",
-        "days",
-    ),
+    "C04": [(BY_DEPOT.format(measure="on_rent_days"), "depot", "days")],
+    "C06": [(BY_DEPOT.format(measure="rental_revenue_cents"), "depot", "euros")],
+    "C08": [(BY_DEPOT.format(measure="on_rent_days"), "depot", "days")],
+    "C07": [
+        (
+            "SELECT SUM(on_rent_days) FROM weekly_rentals WHERE week_start = ? AND channel = ? "
+            "AND depot_id = 'D11' AND category_id = 'PWL'",
+            "channel",
+            "days",
+        ),
+        (BY_DEPOT.format(measure="on_rent_days") + " AND category_id = 'PWL'", "depot", "days"),
+    ],
+    "C09": [
+        (
+            "SELECT SUM(on_rent_days) FROM weekly_rentals JOIN depots USING (depot_id) "
+            "WHERE week_start = ? AND channel = ? AND region_id = 'R3'",
+            "channel",
+            "days",
+        )
+    ],
 }
 
 
-def first_table(case: str) -> tuple[list[str], dict[str, list]]:
-    """Return the columns and the rows of the first table of a case's block."""
+def tables_of(case: str) -> list[tuple[list[str], dict[str, list]]]:
+    """Return the columns and the rows of every table of a case's block."""
     text = (BLOCKS / f"{case}-data.txt").read_text()
-    return next(iter(make_computed.tables(text).values()))
+    return list(make_computed.tables(text).values())
 
 
 # --- the rules, on small examples ---
@@ -123,14 +129,14 @@ def test_no_block_is_left_without_a_check():
 
 def test_the_tables_of_the_blocks_without_a_script_hold_the_figures_of_the_database():
     compared = 0
-    for case, (query, column_is, unit) in HAND_MADE.items():
-        columns, rows = first_table(case)
-        for week, cells in rows.items():
-            for column, printed in zip(columns[1:], cells, strict=True):
-                key = column.split()[0] if column_is == "depot" else column
-                (value,) = DATABASE.execute(query, (week, key)).fetchone()
-                if value is not None and unit == "euros":
-                    value = round(value / 100)
-                assert printed == value, (case, week, column)
-                compared += 1
-    assert compared == 180  # every cell of the five tables
+    for case, queries in HAND_MADE.items():
+        for (columns, rows), (query, column_is, unit) in zip(tables_of(case), queries, strict=True):
+            for week, cells in rows.items():
+                for column, printed in zip(columns[1:], cells, strict=True):
+                    key = column.split()[0] if column_is == "depot" else column
+                    (value,) = DATABASE.execute(query, (week, key)).fetchone()
+                    if value is not None and unit == "euros":
+                        value = round(value / 100)
+                    assert printed == value, (case, week, column)
+                    compared += 1
+    assert compared == 204  # every cell of the six tables
