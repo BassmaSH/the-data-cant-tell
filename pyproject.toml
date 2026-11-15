@@ -1,0 +1,40 @@
+# Style and lint settings. See CONTRIBUTING.md for the guidelines these rules check.
+#   ruff format .        rewrites the files in the agreed style
+#   ruff check .         reports what breaks a rule
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = [
+    "E", "W", "F",  # basic errors and style
+    "I",            # import order
+    "N",            # naming
+    "D",            # docstrings
+    "ANN",          # type hints on every function
+    "B", "SIM",     # likely bugs, needless complexity
+    "C90",          # a function with too many branches
+    "PLR0913",      # a function with too many arguments
+    "PLR0915",      # a function with too many statements
+    "PLW0603",      # a function that changes a module-level variable
+]
+ignore = [
+    "D105", "D107",  # __init__ and __call__ are documented in the class docstring
+    "D203", "D213",  # two docstring layouts that conflict with the ones kept (D211, D212)
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10
+
+[tool.ruff.lint.pylint]
+max-args = 6
+max-statements = 40
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*.py" = ["D103", "ANN201"]  # a test's name is its description, and it returns nothing
