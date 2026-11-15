@@ -1,0 +1,22 @@
+# Runs on every push and pull request: style, lint, tests, and the commands that need no API key.
+name: check
+on: [push, pull_request]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install ruff==0.17.5 pytest
+      - run: ruff format --check .
+      - run: ruff check .
+      - run: pytest -q
+      - run: python grading/2026-10-20/combine.py
+      - run: python data/check_data.py
+      # A rebuild of the database and of the data blocks must change no file.
+      - run: python data/make_data.py
+      - run: python cases/data/make_case_data.py
+      - run: python cases/data/make_computed.py
+      - run: git diff --exit-code
