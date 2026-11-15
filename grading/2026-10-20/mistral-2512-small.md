@@ -10,6 +10,8 @@ region and were skipped); C01 to C03 and C05 from `results/2026-10-20/` (no tag)
 `results/2026-10-20/`: none = `-nosys`, system + sentence = `-premise`, sentence alone = `-premiseonly`,
 steps = `-steps`; C05 cat = the `-categories` file of the same set-up. 50 answers per model.
 
+*Note added Nov 15, 2026: `RESULTS.md`, named below, is the file now called `NOTEBOOK.md`.*
+
 **Earlier** = her verdicts in RESULTS.md, same order (invented · shows · figures · found): run 1 (system,
 C04, C06–C09), run 2 (none, C04, C06–C09), run 3 (a) (system + sentence) and (b) (sentence alone) for C04,
 C06–C09, run 4 (C01–C03, C05, all four set-ups), run 5 (steps, all cases). Runs 1 to 3 list only the

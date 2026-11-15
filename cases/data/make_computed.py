@@ -1,5 +1,5 @@
 """The tools test, small version (Oct 20, 2026): each data block plus the figures its question needs, computed by
-code from the tables in the block itself, so the model only explains (her rule: code computes, the model writes).
+code from the tables in the block itself, so the model only explains (the author's rule: code computes, the model writes).
 
 Numbers only: before and after, changes, per depot or channel. No interpretation and no cause. C05 totals gets no
 category breakdown (the case still tests "can't tell"); C05 categories gets shares and changes, not the mix

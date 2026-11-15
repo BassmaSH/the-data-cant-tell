@@ -1,5 +1,8 @@
 # Grading brief, Oct 20 (for the helper agents)
 
+*Note added Nov 15, 2026. The brief below is kept as it was given to the graders. `RESULTS.md`, which it
+names, is the file now called `NOTEBOOK.md`. "Her" is the author of the experiment, who decided the rules.*
+
 You grade answers from an experiment on whether LLMs invent causes when asked "why did X change?" about
 business data. Read-only on the project: write ONLY your output file. Do not edit anything else.
 

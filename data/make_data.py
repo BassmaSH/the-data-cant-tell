@@ -1,7 +1,7 @@
 """Build company.sqlite: synthetic weekly figures for an invented rental company.
 
 Run from anywhere:
-    .venv/bin/python mistral/data-assistant/data/make_data.py
+    python data/make_data.py
 
 Everything here is invented. Tarrowby Hire does not exist; depots, customers,
 people, emails and phone numbers are fabricated (example-style domains, 555

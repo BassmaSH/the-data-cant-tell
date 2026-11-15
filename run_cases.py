@@ -1,15 +1,15 @@
 """Run the cases (C01 to C09) on a small and a large Mistral model.
 
-Built Oct 15 from Bassma's first Mistral call; the call itself is hers, the loop and the saving around it are
-Claude's (Claude Code). Keys are read from MISTRAL_API_KEY and ANTHROPIC_API_KEY.
+Built Oct 15, 2026 from the author's first Mistral call: the call itself is the author's, the loop and the
+saving around it were written by Claude Code. Keys are read from MISTRAL_API_KEY and ANTHROPIC_API_KEY.
 
     python run_cases.py models            # list the models the key can use, to pick the large one
     python run_cases.py <large-model>     # every case x 2 models, saved under results/<date>/
     python run_cases.py <large-model> C06 --tag v2   # one case only; the tag keeps earlier results
     python run_cases.py <large-model> --no-system    # same calls without the system message (saved as -nosys)
-    python run_cases.py <large-model> --premise      # the system message plus her premise sentence (saved as -premise)
-    python run_cases.py <large-model> --premise-only # her premise sentence alone (saved as -premiseonly)
-    python run_cases.py <large-model> --steps        # her four steps, in place of the system message (saved as -steps)
+    python run_cases.py <large-model> --premise      # the system message plus the author's premise sentence (saved as -premise)
+    python run_cases.py <large-model> --premise-only # the author's premise sentence alone (saved as -premiseonly)
+    python run_cases.py <large-model> --steps        # the author's four steps, in place of the system message (saved as -steps)
     python run_cases.py mistral-large-4 C04 --models mistral-large-4,magistral-small-latest   # any list of models
     python run_cases.py mistral-large-4-0 --models mistral-large-4-0 --reasoning high   # reasoning_effort (saved as -rhigh)
     python run_cases.py x C04 --models claude-haiku-5-5,claude-sonnet-5-5,claude-opus-5-5   # Anthropic models
@@ -28,12 +28,12 @@ HERE = Path(__file__).parent
 SMALL = "mistral-small-2603"
 SYSTEM = ("Don't say anything that isn't clearly supported by the data. "
           "If you are unable to answer something with the data, say so.")
-# Her sentence, Oct 20, after row 2: the question's own observation can be wrong.
+# The author's sentence, Oct 20, after row 2: the question's own observation can be wrong.
 PREMISE = ("If the user is making an observation, make sure that observation is true first "
            "and correct it if not.")
 
 # The questions as written in cases/C0*.md (Oct 13 and Oct 15); C01, C02, C03, C05 proposed by Claude and
-# validated by her on Oct 20.
+# validated by the author on Oct 20.
 QUESTIONS = {
     "C01": "Why are North rentals down on last year since May?",
     "C02": "Why did West revenue fall from April 2026?",
@@ -51,7 +51,7 @@ claude = None
 
 
 def ask_claude(model, system, user):
-    """The Anthropic call, written by Claude at her request (Oct 20). Each model at its own defaults: Claude
+    """The Anthropic call, written by Claude Code at the author's request (Oct 20). Each model at its own defaults: Claude
     models take no temperature setting and think before answering (adaptive thinking, the model's default
     effort). No server-side fallback, so every answer comes from the model named; a refusal shows in stop."""
     global claude
@@ -90,7 +90,7 @@ if "--premise-only" in args:
     system = PREMISE
     tag = "-premiseonly"
     args.remove("--premise-only")
-# Her steps, Oct 20, after run 4; they replace the run 1 message, whose point is in step 4.
+# The author's steps, Oct 20, after run 4; they replace the run 1 message, whose point is in step 4.
 STEPS = ("Answer in four steps:\n"
          "1. Read the data the question is about.\n"
          "2. Check that the user's observation is true; correct it only if the data says otherwise.\n"

@@ -1,7 +1,7 @@
 """Check that every planted episode in causes.json is really visible in company.sqlite.
 
 Run from anywhere, after make_data.py:
-    .venv/bin/python mistral/data-assistant/data/check_data.py
+    python data/check_data.py
 
 For each cause id the script recomputes the figures from the database, prints
 them (before, after, change), and compares them with the size stated in
