@@ -7,24 +7,20 @@ FILES = {"large4-none.md": "mistral-large-4-0 (reasoning off)", "large4-high.md"
          "haiku.md": "claude-haiku-5-5", "sonnet.md": "claude-sonnet-5-5", "opus.md": "claude-opus-5-5"}
 PRICE = {"mistral-small-2603": (0.15, 0.60), "mistral-large-2512": (0.50, 1.50), "mistral-large-4-0": (1.36, 4.18),
          "claude-haiku-5-5": (0.10, 0.50), "claude-sonnet-5-5": (2, 10), "claude-opus-5-5": (4, 20)}
-# Rule C read both ways (her convention or the plain calendar): two verdicts flipped by Claude, Oct 20.
-FLIP = {("mistral-large-4-0 (reasoning high)", "C02", "system + sentence"): "figures",
-        ("mistral-small-2603", "C08", "steps"): "figures"}
+# A verdict cell is "y" or "n"; "n → y" is a verdict changed after grading (the file says why): the last one counts.
+CELL = re.compile(r"[yn](?: → [yn])?")
 rows = []
 def parse(path, model):
     for line in path.read_text().splitlines():
         c = [x.strip() for x in line.strip().strip("|").split("|")]
         case = c[0].replace("*", "").strip() if c else ""
-        if len(c) >= 6 and re.fullmatch(r"C0\d.*", case) and all(x in ("y", "n") for x in c[2:6]):
+        if len(c) >= 6 and re.fullmatch(r"C0\d.*", case) and all(CELL.fullmatch(x) for x in c[2:6]):
             setup = {"system": "system message"}.get(c[1], c[1])
-            rows.append([model, case, setup] + [x == "y" for x in c[2:6]])
+            rows.append([model, case, setup] + [x[-1] == "y" for x in c[2:6]])
 for f, m in FILES.items(): parse(G / f, m)
 txt = (G / "mistral-2512-small.md").read_text().split("## mistral-large-2512")
 for part, m in zip(txt, ["mistral-small-2603", "mistral-large-2512"]):
     p = G / "_tmp.md"; p.write_text(part); parse(p, m); p.unlink()
-for r in rows:
-    k = (r[0], r[1].split()[0], r[2])
-    if k in FLIP: r[5] = True
 def files_for(model, setup):
     base = model.split(" ")[0]
     tag = {"system message": "", "none": "-nosys", "system + sentence": "-premise", "sentence alone": "-premiseonly", "steps": "-steps"}[setup]
