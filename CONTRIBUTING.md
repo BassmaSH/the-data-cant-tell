@@ -12,7 +12,7 @@ here.
 pip install ruff==0.17.5 pytest
 ruff format .                          # rewrites the files in the agreed style
 ruff check .                           # reports what breaks a rule
-pytest -q                              # 67 checks, no API call, no key
+pytest -q                              # 68 checks, no API call, no key
 python grading/2026-10-20/combine.py   # the published tables, rebuilt from the grading files
 python data/check_data.py              # the nine planted episodes, recomputed from the database
 ```

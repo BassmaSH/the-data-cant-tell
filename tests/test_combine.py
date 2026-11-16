@@ -25,10 +25,6 @@ NOTEBOOK = (ROOT / "NOTEBOOK.md").read_text()
 VERDICTS = combine.load_verdicts()
 CELLS = combine.build_cells(VERDICTS)
 
-# The one published figure that the script does not reproduce to the cent. The README and the
-# notebook say $3.34; the token counts give $3.347. grading/2026-10-20/computed.md explains it.
-KNOWN_DIFFERENCE = ("$3.35", "$3.34")
-
 
 def verdict(marks: str) -> Verdict:
     """Build a verdict from four letters, for example "nyyy"."""
@@ -270,13 +266,17 @@ def test_the_readmes_table_of_fully_right_answers_is_the_one_printed():
 
 def test_the_readmes_table_of_cost_and_speed_is_the_one_printed():
     readme_lines = {plain(line) for line in README.splitlines()}
-    different = []
-    for line in combine.best_setup_table(CELLS)[2:]:
-        if plain(line) not in readme_lines:
-            different.append(line)
-    assert len(different) == 1, different
-    printed, published = KNOWN_DIFFERENCE
-    assert plain(different[0].replace(printed, published)) in readme_lines
+    for line in combine.best_setup_table(CELLS):
+        assert plain(line) in readme_lines, line
+
+
+def test_the_notebook_keeps_its_cost_of_oct_20_with_a_note_that_gives_the_readmes():
+    """NOTEBOOK.md, run 9, says $3.34; the token counts give $3.35 (computed.md says why)."""
+    cell = CELLS["mistral-large-4-0 (reasoning off)", COMPUTED]
+    assert f"${cell.cost_per_1000_fully_right:.2f}" == "$3.35"
+    assert "| $3.01 | **$3.34** | **3.3, 6.8** |" in NOTEBOOK
+    assert "the README now gives $3.35, not $3.34" in NOTEBOOK
+    assert "| **$3.34** |" not in README and "| **$3.35** |" in README
 
 
 def test_the_counts_quoted_in_the_readme_are_the_ones_printed():

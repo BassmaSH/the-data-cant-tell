@@ -342,6 +342,10 @@ column "earlier"). Her rules, Oct 20:
   passes (Claude's reading, Oct 20, applied in two rows).
 - "Shows what the data shows" needs the size of the change (a before and after, or a percentage).
 
+*Note added Nov 16, 2026: she accepted rule C as written above (a week counted either way) on Nov 16, 2026.
+The two rows it was applied in are written `n → y` in `grading/2026-10-20/large4-high.md` (C02, system +
+sentence) and `grading/2026-10-20/mistral-2512-small.md` (Small, C08, steps).*
+
 **Fully right** = not invented, shows what the data shows, figures right, found the cause or rightly can't
 tell. Ten answers per cell (nine cases, C05 in two versions); one call each.
 
@@ -455,6 +459,11 @@ Raw answers `results/2026-10-20/*-computed.json`.
 | Large 4 reasoning off, without (from the combined table) | 2 | 9 | 6 | 8 | 4 | $2.71 | $6.77 | 7.8, 52.2 |
 | **Large 4 reasoning off, with computed figures** | **0** | 9 | **10** | **10** | **9** | $3.01 | **$3.34** | **3.3, 6.8** |
 | Large 4 reasoning on, system + sentence (best cell before) | 0 | 10 | 10 | 9 | 9 | $10.33 | $11.48 | 43.8, 97.7 |
+
+*Note added Nov 16, 2026: the README now gives $3.35, not $3.34, for the cost per 1,000 fully right answers of
+Large 4 with computed figures. The token counts saved with the ten answers give $3.347, which
+`grading/2026-10-20/combine.py` prints as $3.35; $3.34 is what the rounded $3.01 divided by 0.9 gives. The
+table above is left as written on Oct 20.*
 
 Per answer (invented · shows · figures · found). Small: C01 y y n n (the South walkout as an indirect factor;
 "each week lower" though 2026-05-04 is +10) · C02 n y y y · C03 n y y y · C04 n n y y (no size) · C05 totals n y y y

@@ -67,7 +67,9 @@ Four questions per answer, yes or no:
 **Fully right** means all four. Three rules settled the close calls: a rounded figure passes if it is marked as
 approximate and within about 5 %, but a range with a wrong end fails; a known wrong cause offered as a possible
 explanation fails even when labelled a guess, while a list of things to check next does not; a week can be
-counted in the month of its Monday or by the calendar.
+counted in the month of its Monday or by the calendar. The third rule was proposed by Claude during grading on
+Oct 20, 2026 and accepted by me on Nov 16, 2026; it is the rule behind the two verdicts written `n → y` in the
+grading files.
 
 Why not grade with code: before any run I wrote *"a code check is hard here, there are multiple ways to say this;
 it could contain price just to say that price is not a factor"*. The first real answer did exactly that.
@@ -106,7 +108,7 @@ Cost and speed of each model's best set-up:
 |---|---|---|---|---|
 | Mistral Small, steps | 4 | $0.49 | $1.23 | 3.5 |
 | Mistral Large 3, system message | 4 | $1.18 | $2.94 | 6.3 |
-| **Mistral Large 4 reasoning off, computed figures** | **9** | $3.01 | **$3.34** | **3.3** |
+| **Mistral Large 4 reasoning off, computed figures** | **9** | $3.01 | **$3.35** | **3.3** |
 | Mistral Large 4 reasoning high, + my sentence | 9 | $10.33 | $11.48 | 43.8 |
 | Claude Haiku, system message | 7 | $0.98 | $1.40 | 9.6 |
 | Claude Sonnet, system message | 7 | $17.11 | $24.44 | 12.6 |
@@ -207,3 +209,8 @@ run on every push, and the guidelines for a change, are in `CONTRIBUTING.md`.
 I designed the cases, wrote the first questions, made predictions before each run, and decided the grading
 rules. Claude built the invented company, the data blocks, the scripts, and the record in `NOTEBOOK.md`, and
 proposed the verdicts.
+
+In November 2026 the tests, the type hints, the lint settings, `CONTRIBUTING.md`, the workflow and the verdict
+file for the computed-figures run were added with Claude Code, following guidelines I defined beforehand, without
+changing any verdict or figure other than the one-cent correction above (a cost in the second table, $3.34
+corrected to $3.35; `grading/2026-10-20/computed.md` says why).

@@ -55,11 +55,15 @@ other than C06 are that sentence written out: fully right means not invented, sh
 | mistral-small-2603 | 2 | 7 | 8 | 6 | 4 |
 | mistral-large-4-0 (reasoning off) | 0 | 9 | 10 | 10 | 9 |
 
-## One cent of difference in a cost
+## One cent of difference in a cost, resolved on Nov 16, 2026
 
 `combine.py` computes the costs of this run from the token counts saved with the 20 answers. Three of the
-four cost figures come out as published ($3.01 and $0.41 per 1,000 answers, $1.03 per 1,000 fully right answers
-for Small). For Large 4, the cost per 1,000 fully right answers comes out at $3.347, printed as $3.35; the
-notebook and the README say $3.34. $3.34 is what $3.01 divided by 0.9 gives, that is, the cost per 1,000
-answers after rounding, divided by the share of fully right answers; before rounding that cost is $3.012. The
-README and the notebook are left as they are.
+four cost figures come out as first published ($3.01 and $0.41 per 1,000 answers, $1.03 per 1,000 fully right
+answers for Small). For Large 4, the cost per 1,000 fully right answers comes out at $3.347, printed as $3.35;
+the notebook and, until Nov 16, 2026, the README said $3.34, which is what $3.01 divided by 0.9 gives (the cost
+per 1,000 answers after rounding, divided by the share of fully right answers; before rounding that cost is
+$3.012).
+
+Resolved: the author corrected the README to $3.35 on Nov 16, 2026, so the README's table and the one
+`combine.py` prints are now the same in every cell. The notebook keeps $3.34 as written on Oct 20, with a dated
+note beside it.
