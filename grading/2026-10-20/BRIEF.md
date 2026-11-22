@@ -1,5 +1,13 @@
 # Grading brief, Oct 20 (for the helper agents)
 
+*Note added Nov 15, 2026. The brief below is kept as it was given to the graders. `RESULTS.md`, which it
+names, is the file now called `NOTEBOOK.md`. "Her" is the author of the experiment, who decided the rules.*
+
+*Note added Nov 16, 2026. Rule C below is the Monday reading, as the graders were given it. The reading that
+lets a week count in the month of its Monday or by the calendar was proposed by Claude during grading on
+Oct 20, 2026 and accepted by the author on Nov 16, 2026. It is behind the two verdicts written `n → y` in
+`large4-high.md` and `mistral-2512-small.md`.*
+
 You grade answers from an experiment on whether LLMs invent causes when asked "why did X change?" about
 business data. Read-only on the project: write ONLY your output file. Do not edit anything else.
 

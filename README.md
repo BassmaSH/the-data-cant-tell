@@ -67,7 +67,9 @@ Four questions per answer, yes or no:
 **Fully right** means all four. Three rules settled the close calls: a rounded figure passes if it is marked as
 approximate and within about 5 %, but a range with a wrong end fails; a known wrong cause offered as a possible
 explanation fails even when labelled a guess, while a list of things to check next does not; a week can be
-counted in the month of its Monday or by the calendar.
+counted in the month of its Monday or by the calendar. The third rule was proposed by Claude during grading on
+Oct 20, 2026 and accepted by me on Nov 16, 2026; it is the rule behind the two verdicts written `n → y` in the
+grading files.
 
 Why not grade with code: before any run I wrote *"a code check is hard here, there are multiple ways to say this;
 it could contain price just to say that price is not a factor"*. The first real answer did exactly that.
@@ -106,7 +108,7 @@ Cost and speed of each model's best set-up:
 |---|---|---|---|---|
 | Mistral Small, steps | 4 | $0.49 | $1.23 | 3.5 |
 | Mistral Large 3, system message | 4 | $1.18 | $2.94 | 6.3 |
-| **Mistral Large 4 reasoning off, computed figures** | **9** | $3.01 | **$3.34** | **3.3** |
+| **Mistral Large 4 reasoning off, computed figures** | **9** | $3.01 | **$3.35** | **3.3** |
 | Mistral Large 4 reasoning high, + my sentence | 9 | $10.33 | $11.48 | 43.8 |
 | Claude Haiku, system message | 7 | $0.98 | $1.40 | 9.6 |
 | Claude Sonnet, system message | 7 | $17.11 | $24.44 | 12.6 |
@@ -117,7 +119,10 @@ $1.36 / $4.18 (a third-party list price; Large 4 was in public preview and not o
 Haiku 5.5 $0.10 / $0.50, Sonnet 5.5 $2 / $10, Opus 5.5 $4 / $20. Thinking tokens are billed and counted.
 
 Every answer is in `results/`, every verdict with its reason in `grading/2026-10-20/`, and the full record of each
-run, with each prediction next to its result, in `NOTEBOOK.md`.
+run, with each prediction next to its result, in `NOTEBOOK.md`. The verdicts of the computed-figures run were
+copied into `grading/2026-10-20/computed.md` from the notebook (run 9) on Nov 15, 2026, without regrading. Two
+verdicts were changed after grading, under the third rule above; the grading files show both the grader's verdict
+and the one counted. `python grading/2026-10-20/combine.py` prints the two tables above from these files.
 
 ## What the runs taught me
 
@@ -127,8 +132,8 @@ cut prices", which is true), Mistral Large 3 with the sentence alone wrote a sec
 misconception". Added to the system message, it helped the large models slightly and did nothing for the small one.
 
 **Steps helped only the small model.** Four steps took Mistral Small to zero invented causes, its best result
-before computed figures. For every other model they scored below the plain system message: the step "check the
-observation" made them look for something to correct.
+before computed figures. For every other model except Mistral Large 3, which scored 4 with both, they scored
+below the plain system message: the step "check the observation" made them look for something to correct.
 
 **The errors that were left were not about judgement.** Comparing the wrong weeks, a wrong sum, a rise read as a
 drop, the contract column quoted as the counter column. *"I think the things they didn't fix, except for the
@@ -176,19 +181,36 @@ moved the start earlier to fit a bigger drop. Opus was the only model to flag it
 
 ## Run it
 
+To check the published numbers (no key, no model call, standard library only):
+
+```bash
+python grading/2026-10-20/combine.py    # every table above, from the grading files and the saved answers
+python data/check_data.py               # the nine planted episodes, recomputed from the database
+```
+
+To run the models again (this calls the APIs and costs money):
+
 ```bash
 python -m venv .venv && .venv/bin/pip install -r requirements.txt
 export MISTRAL_API_KEY=...          # and ANTHROPIC_API_KEY for the Claude models
 .venv/bin/python run_cases.py mistral-large-2512                 # every case, Small and Large 3, system message
-.venv/bin/python run_cases.py x --models claude-haiku-5-5 --steps   # any model list, any set-up
-.venv/bin/python run_cases.py x --data computed --models mistral-large-4-0 --reasoning none
+.venv/bin/python run_cases.py --models claude-haiku-5-5 --steps   # any model list, any set-up
+.venv/bin/python run_cases.py --data computed --models mistral-large-4-0 --reasoning none
 ```
 
-`run_cases.py` prints the options. The data blocks are rebuilt by `cases/data/make_case_data.py` and
-`cases/data/make_computed.py`; the database by `data/make_data.py` (deterministic).
+`run_cases.py` prints the options. The data blocks of C01, C02, C03 and C05 are rebuilt by
+`cases/data/make_case_data.py`; those of C04 and C06 to C09 were prepared from the database before that script
+and have no script, and a test compares their tables with the database. `cases/data/make_computed.py` adds the
+computed figures to every block; the database is rebuilt by `data/make_data.py` (deterministic). The checks that
+run on every push, and the guidelines for a change, are in `CONTRIBUTING.md`.
 
 ## How this was built
 
 I designed the cases, wrote the first questions, made predictions before each run, and decided the grading
 rules. Claude built the invented company, the data blocks, the scripts, and the record in `NOTEBOOK.md`, and
 proposed the verdicts.
+
+In November 2026 the tests, the type hints, the lint settings, `CONTRIBUTING.md`, the workflow and the verdict
+file for the computed-figures run were added with Claude Code, following guidelines I defined beforehand, without
+changing any verdict or figure other than the one-cent correction above (a cost in the second table, $3.34
+corrected to $3.35; `grading/2026-10-20/computed.md` says why).

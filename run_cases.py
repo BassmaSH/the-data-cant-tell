@@ -1,146 +1,370 @@
-"""Run the cases (C01 to C09) on a small and a large Mistral model.
+"""Ask the cases (C01 to C09) to one or more models and save every answer.
 
-Built Oct 15 from Bassma's first Mistral call; the call itself is hers, the loop and the saving around it are
-Claude's (Claude Code). Keys are read from MISTRAL_API_KEY and ANTHROPIC_API_KEY.
+Built Oct 15, 2026 from the author's first Mistral call: the call itself is the author's, the loop
+and the saving around it were written by Claude Code. Reorganised on Nov 15, 2026 (options read by
+argparse, the set-ups in one table, a main() function, no client built before it is needed).
+Keys are read from MISTRAL_API_KEY and ANTHROPIC_API_KEY. Every call costs money.
 
-    python run_cases.py models            # list the models the key can use, to pick the large one
-    python run_cases.py <large-model>     # every case x 2 models, saved under results/<date>/
-    python run_cases.py <large-model> C06 --tag v2   # one case only; the tag keeps earlier results
-    python run_cases.py <large-model> --no-system    # same calls without the system message (saved as -nosys)
-    python run_cases.py <large-model> --premise      # the system message plus her premise sentence (saved as -premise)
-    python run_cases.py <large-model> --premise-only # her premise sentence alone (saved as -premiseonly)
-    python run_cases.py <large-model> --steps        # her four steps, in place of the system message (saved as -steps)
-    python run_cases.py mistral-large-4 C04 --models mistral-large-4,magistral-small-latest   # any list of models
-    python run_cases.py mistral-large-4-0 --models mistral-large-4-0 --reasoning high   # reasoning_effort (saved as -rhigh)
-    python run_cases.py x C04 --models claude-haiku-5-5,claude-sonnet-5-5,claude-opus-5-5   # Anthropic models
-    python run_cases.py <large-model> C05 --data categories   # reads C05-data-categories.txt (saved as -categories)
+    python run_cases.py models                 # list the models the Mistral key can use
+    python run_cases.py mistral-large-2512     # every case on Mistral Small and on the model named
+    python run_cases.py mistral-large-2512 C06 --tag v2   # one case; the tag keeps earlier answers
+    python run_cases.py --models claude-haiku-5-5,claude-opus-5-5 C04   # any list of models
+
+The set-up (one at most; without any, the system message of run 1):
+
+    --no-system      no system message                                  (saved as -nosys)
+    --premise        the system message plus the author's sentence      (saved as -premise)
+    --premise-only   the author's sentence alone                        (saved as -premiseonly)
+    --steps          the author's four steps, in place of the message   (saved as -steps)
+
+Other options:
+
+    --reasoning high        Mistral's reasoning_effort, "none" or "high"   (saved as -rhigh)
+    --data categories       reads <case>-data-categories.txt               (saved as -categories)
+    --data computed         reads <case>-data-computed.txt                 (saved as -computed)
+
+Answers go to results/<today>/<case>-<model><set-up><reasoning><data><tag>.json. A saved answer is
+never replaced: a command that would write over one stops before any call, and --tag gives the
+new answers another name. A command also stops before any call when the key it needs is not set.
 """
+
+import argparse
+import functools
 import json
 import os
+import re
 import sys
 import time
+from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
-
-from mistralai.client import Mistral
+from typing import Any
 
 HERE = Path(__file__).parent
 SMALL = "mistral-small-2603"
-SYSTEM = ("Don't say anything that isn't clearly supported by the data. "
-          "If you are unable to answer something with the data, say so.")
-# Her sentence, Oct 20, after row 2: the question's own observation can be wrong.
-PREMISE = ("If the user is making an observation, make sure that observation is true first "
-           "and correct it if not.")
+MAX_TOKENS_CLAUDE = 16000  # room for the thinking and the answer
+CASE_SHAPED = re.compile(r"[Cc]\d+")
+MISTRAL_KEY = "MISTRAL_API_KEY"
+CLAUDE_KEY = "ANTHROPIC_API_KEY"
 
-# The questions as written in cases/C0*.md (Oct 13 and Oct 15); C01, C02, C03, C05 proposed by Claude and
-# validated by her on Oct 20.
+SYSTEM = (
+    "Don't say anything that isn't clearly supported by the data. "
+    "If you are unable to answer something with the data, say so."
+)
+# The author's sentence, Oct 20, after row 2: the question's own observation can be wrong.
+PREMISE = (
+    "If the user is making an observation, make sure that observation is true first "
+    "and correct it if not."
+)
+# The author's steps, Oct 20, after run 4; they replace the run 1 message, whose point is in step 4.
+STEPS = (
+    "Answer in four steps:\n"
+    "1. Read the data the question is about.\n"
+    "2. Check that the user's observation is true; correct it only if the data says otherwise.\n"
+    "3. Check whether the data is enough to answer.\n"
+    "4. If it is, answer with what the data shows. If not, say what's missing. "
+    "Call any guess a guess."
+)
+
+# Set-up -> (the system message, the tag in the file name). "system" is the one used when no
+# set-up option is given.
+SETUPS: dict[str, tuple[str | None, str]] = {
+    "system": (SYSTEM, ""),
+    "no-system": (None, "-nosys"),
+    "premise": (SYSTEM + " " + PREMISE, "-premise"),
+    "premise-only": (PREMISE, "-premiseonly"),
+    "steps": (STEPS, "-steps"),
+}
+
+# The questions as written in cases/C0*.md (Oct 13 and Oct 15); C01, C02, C03, C05 proposed by
+# Claude and validated by the author on Oct 20.
 QUESTIONS = {
     "C01": "Why are North rentals down on last year since May?",
     "C02": "Why did West revenue fall from April 2026?",
     "C03": "Why did East contract revenue fall from late January 2026?",
     "C04": "Why is there a drop in Tidesend on the week of 2026-06-15?",
-    "C05": "Why is the South's average daily rate lower this summer than last summer? We didn't cut prices.",
+    "C05": "Why is the South's average daily rate lower this summer than last summer? "
+    "We didn't cut prices.",
     "C06": "Why did North revenue drop on the week of 2026-07-13?",
     "C07": "What happened between 2025-11-10 and 2025-11-24 at D11 Lowen Quay?",
     "C08": "Why did rentals drop at Hollin Cross in October 2025?",
     "C09": "Why did walk-in rentals drop at the counter, East region, July 2026?",
 }
 
-client = Mistral(api_key=os.environ.get("MISTRAL_API_KEY", ""))
-claude = None
+
+@dataclass(frozen=True)
+class Plan:
+    """What one command runs.
+
+    Attributes:
+        models: the models to ask, in order.
+        cases: the cases to ask, in order.
+        system: the system message, or None for no system message.
+        reasoning: Mistral's reasoning_effort, or None to leave it unset.
+        data: which data block is read: "" for <case>-data.txt, "computed" for
+            <case>-data-computed.txt.
+        tag: what follows the model in the name of the answer file.
+    """
+
+    models: list[str]
+    cases: list[str]
+    system: str | None
+    reasoning: str | None
+    data: str
+    tag: str
+
+    def data_name(self, case: str) -> str:
+        """Return the name of the data block of a case, in cases/data/."""
+        return f"{case}-data{'-' + self.data if self.data else ''}.txt"
+
+    def answer_name(self, case: str, model: str) -> str:
+        """Return the name of the file that holds one answer."""
+        return f"{case}-{model}{self.tag}.json"
 
 
-def ask_claude(model, system, user):
-    """The Anthropic call, written by Claude at her request (Oct 20). Each model at its own defaults: Claude
-    models take no temperature setting and think before answering (adaptive thinking, the model's default
-    effort). No server-side fallback, so every answer comes from the model named; a refusal shows in stop."""
-    global claude
-    if claude is None:
-        from anthropic import Anthropic
-        claude = Anthropic()  # reads ANTHROPIC_API_KEY
-    kwargs = {"model": model, "max_tokens": 16000, "messages": [{"role": "user", "content": user}]}
+@dataclass(frozen=True)
+class Answer:
+    """What a model returned: the text, the tokens billed and why it stopped."""
+
+    text: str
+    prompt_tokens: int
+    completion_tokens: int
+    stop: str
+
+
+def build_parser() -> argparse.ArgumentParser:
+    """Return the parser of the command line. The docstring of this file is its help text."""
+    parser = argparse.ArgumentParser(
+        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
+    )
+    parser.add_argument(
+        "names",
+        nargs="*",
+        metavar="model-or-case",
+        help='the large model to run next to Mistral Small, and any cases; or the word "models"',
+    )
+    parser.add_argument("--models", help="a list of models, with commas, in place of the pair")
+    setup = parser.add_mutually_exclusive_group()
+    for name in SETUPS:
+        if name != "system":
+            setup.add_argument(f"--{name}", dest="setup", action="store_const", const=name)
+    parser.add_argument("--reasoning", choices=["none", "high"])
+    parser.add_argument("--data", default="", help="the variant of the data block")
+    parser.add_argument("--tag", default="", help="a word added to the names of the answer files")
+    parser.set_defaults(setup="system")
+    return parser
+
+
+def choose_models(positional: list[str], listed: str | None) -> list[str]:
+    """Decide which models to ask.
+
+    Args:
+        positional: the words of the command that are not cases.
+        listed: the value of --models, or None.
+
+    Returns:
+        The list given with --models, or Mistral Small and the model named.
+
+    Raises:
+        ValueError: when the command names no model, or more than one outside --models.
+    """
+    if len(positional) > 1:
+        raise ValueError(f"expected one model, got {positional} (cases are C01 to C09)")
+    if listed:
+        # Commands written before Nov 15 gave a first word even with --models; it was never used.
+        if positional:
+            print(f"note: {positional[0]!r} is not used, --models decides", file=sys.stderr)
+        return listed.split(",")
+    if not positional:
+        raise ValueError("name the large model to run next to Mistral Small, or pass --models")
+    return [SMALL, positional[0]]
+
+
+def plan_from(argv: list[str]) -> Plan:
+    """Turn the words of a command into what it runs.
+
+    Raises:
+        ValueError: when the command names no model, more than one outside --models, or a case
+            that does not exist.
+    """
+    args = build_parser().parse_intermixed_args(argv)
+    cases = [name for name in args.names if name in QUESTIONS]
+    unknown = [n for n in args.names if n not in QUESTIONS and CASE_SHAPED.fullmatch(n)]
+    if unknown:
+        raise ValueError(f"no such case: {', '.join(unknown)} (cases are C01 to C09)")
+    system, tag = SETUPS[args.setup]
+    if args.reasoning:
+        tag += f"-r{args.reasoning}"
+    if args.data:
+        tag += f"-{args.data}"
+    if args.tag:
+        tag += f"-{args.tag}"
+    return Plan(
+        models=choose_models([n for n in args.names if n not in QUESTIONS], args.models),
+        cases=cases or list(QUESTIONS),
+        system=system,
+        reasoning=args.reasoning,
+        data=args.data,
+        tag=tag,
+    )
+
+
+def user_message(data: str, question: str) -> str:
+    """Return the user message: the data block, then the question."""
+    return f"data:{data}, question:{question}"
+
+
+@functools.cache
+def mistral_client() -> Any:  # noqa: ANN401 (the library is imported only when a call is made)
+    """Return the Mistral client, built on first use from MISTRAL_API_KEY."""
+    from mistralai.client import Mistral
+
+    return Mistral(api_key=os.environ.get(MISTRAL_KEY, ""))
+
+
+@functools.cache
+def claude_client() -> Any:  # noqa: ANN401 (the library is imported only when a call is made)
+    """Return the Anthropic client, built on first use from ANTHROPIC_API_KEY."""
+    from anthropic import Anthropic
+
+    return Anthropic()
+
+
+def ask_mistral(model: str, system: str | None, user: str, reasoning: str | None) -> Answer:
+    """Ask a Mistral model at temperature 0.
+
+    Args:
+        model: the model's name.
+        system: the system message, or None.
+        user: the user message.
+        reasoning: reasoning_effort, or None to leave it unset (Oct 20: the docs give no default).
+    """
+    messages = [{"role": "user", "content": user}]
     if system:
-        kwargs["system"] = system
-    res = claude.messages.create(**kwargs)
-    answer = "".join(b.text for b in res.content if b.type == "text")  # thinking blocks dropped
-    return answer, res.usage.input_tokens, res.usage.output_tokens, res.stop_reason
+        messages.insert(0, {"role": "system", "content": system})
+    extra = {"reasoning_effort": reasoning} if reasoning else {}
+    # top_p=1: Large 4 requires it with temperature 0 (no effect under greedy sampling).
+    result = mistral_client().chat.complete(
+        model=model, temperature=0, top_p=1, messages=messages, **extra
+    )
+    text = result.choices[0].message.content
+    if not isinstance(text, str):
+        # Reasoning answers come in chunks: keep the text, drop the thinking.
+        chunks = [getattr(c, "text", "") for c in text if getattr(c, "type", "") == "text"]
+        text = "".join(chunks)
+    usage = result.usage
+    return Answer(
+        text, usage.prompt_tokens, usage.completion_tokens, str(result.choices[0].finish_reason)
+    )
 
 
-if len(sys.argv) < 2:
-    sys.exit(__doc__)
+def ask_claude(model: str, system: str | None, user: str) -> Answer:
+    """Ask a Claude model at its own defaults.
 
-if sys.argv[1] == "models":
-    for m in client.models.list().data:
-        print(m.id)
-    sys.exit()
+    Written by Claude Code at the author's request (Oct 20). Claude models take no temperature
+    setting and think before answering (adaptive thinking, the model's default effort). No
+    server-side fallback, so every answer comes from the model named; a refusal shows in stop.
+    """
+    request = {
+        "model": model,
+        "max_tokens": MAX_TOKENS_CLAUDE,
+        "messages": [{"role": "user", "content": user}],
+    }
+    if system:
+        request["system"] = system
+    result = claude_client().messages.create(**request)
+    text = "".join(block.text for block in result.content if block.type == "text")
+    return Answer(
+        text, result.usage.input_tokens, result.usage.output_tokens, str(result.stop_reason)
+    )
 
-large = sys.argv[1]
-args = sys.argv[2:]
-tag = ""
-system = SYSTEM
-if "--no-system" in args:
-    system = None
-    tag = "-nosys"
-    args.remove("--no-system")
-if "--premise" in args:
-    system = SYSTEM + " " + PREMISE
-    tag = "-premise"
-    args.remove("--premise")
-if "--premise-only" in args:
-    system = PREMISE
-    tag = "-premiseonly"
-    args.remove("--premise-only")
-# Her steps, Oct 20, after run 4; they replace the run 1 message, whose point is in step 4.
-STEPS = ("Answer in four steps:\n"
-         "1. Read the data the question is about.\n"
-         "2. Check that the user's observation is true; correct it only if the data says otherwise.\n"
-         "3. Check whether the data is enough to answer.\n"
-         "4. If it is, answer with what the data shows. If not, say what's missing. Call any guess a guess.")
-if "--steps" in args:
-    system = STEPS
-    tag = "-steps"
-    args.remove("--steps")
-models = [SMALL, large]
-if "--models" in args:
-    models = args[args.index("--models") + 1].split(",")
-    del args[args.index("--models"):args.index("--models") + 2]
-extra = {}
-if "--reasoning" in args:  # Mistral's reasoning_effort ("none" or "high"), Oct 20; the docs give no default
-    extra["reasoning_effort"] = args[args.index("--reasoning") + 1]
-    tag += "-r" + extra["reasoning_effort"]
-    del args[args.index("--reasoning"):args.index("--reasoning") + 2]
-variant = ""
-if "--data" in args:
-    variant = "-" + args[args.index("--data") + 1]
-    tag += variant
-    del args[args.index("--data"):args.index("--data") + 2]
-if "--tag" in args:
-    tag += "-" + args[args.index("--tag") + 1]
-    args = args[:args.index("--tag")]
-cases = args or list(QUESTIONS)
-out = HERE / "results" / date.today().isoformat()
-out.mkdir(parents=True, exist_ok=True)
 
-for case in cases:
-    question = QUESTIONS[case]
-    data = (HERE / "cases" / "data" / f"{case}-data{variant}.txt").read_text()
-    for model in models:
-        user = f"data:{data}, question:{question}"
-        start = time.perf_counter()
-        if model.startswith("claude-"):
-            answer, tokens_in, tokens_out, stop = ask_claude(model, system, user)
-        else:
-            messages = [{"role": "user", "content": user}]
-            if system:
-                messages.insert(0, {"role": "system", "content": system})
-            res = client.chat.complete(model=model, temperature=0, top_p=1, messages=messages, **extra)  # top_p=1: Large 4 requires it with temperature 0 (no effect under greedy sampling)
-            answer = res.choices[0].message.content
-            if not isinstance(answer, str):  # reasoning answers come in chunks: keep the text, drop the thinking
-                answer = "".join(getattr(c, "text", "") for c in answer if getattr(c, "type", "") == "text")
-            tokens_in, tokens_out, stop = res.usage.prompt_tokens, res.usage.completion_tokens, res.choices[0].finish_reason
-        seconds = time.perf_counter() - start
-        record = {"case": case, "model": model, "question": question, "system": system,
-                  "prompt_tokens": tokens_in, "completion_tokens": tokens_out, "stop": str(stop),
-                  "seconds": round(seconds, 2), "answer": answer}
-        (out / f"{case}-{model}{tag}.json").write_text(json.dumps(record, indent=1, ensure_ascii=False))
-        print(f"\n=== {case} · {model} · {tokens_in}+{tokens_out} tokens · {seconds:.1f} s\n{answer}")
+def ask(model: str, plan: Plan, user: str) -> Answer:
+    """Ask one model, by the library its name calls for."""
+    if model.startswith("claude-"):
+        return ask_claude(model, plan.system, user)
+    return ask_mistral(model, plan.system, user, plan.reasoning)
+
+
+def key_for(model: str) -> str:
+    """Return the name of the environment variable that holds the key a model needs."""
+    return CLAUDE_KEY if model.startswith("claude-") else MISTRAL_KEY
+
+
+def reason_not_to_run(plan: Plan, folder: Path, environ: dict[str, str]) -> str | None:
+    """Check, before any call, that a plan can run and would replace nothing.
+
+    Args:
+        plan: what the command runs.
+        folder: where the answers would be saved.
+        environ: the environment variables.
+
+    Returns:
+        Why the plan must not run, or None when it can.
+    """
+    missing = sorted({key_for(m) for m in plan.models if not environ.get(key_for(m))})
+    if missing:
+        return f"{' and '.join(missing)} not set: nothing was called"
+    names = [plan.answer_name(case, model) for case in plan.cases for model in plan.models]
+    saved = [name for name in names if (folder / name).exists()]
+    if saved:
+        return (
+            f"{len(saved)} of these answers are already saved in {folder} (the first: {saved[0]}). "
+            "A saved answer is never replaced: add --tag to name the new ones"
+        )
+    return None
+
+
+def run(plan: Plan, folder: Path) -> None:
+    """Ask every case to every model, save each answer in the folder and print it."""
+    folder.mkdir(parents=True, exist_ok=True)
+    for case in plan.cases:
+        question = QUESTIONS[case]
+        data = (HERE / "cases" / "data" / plan.data_name(case)).read_text()
+        for model in plan.models:
+            start = time.perf_counter()
+            answer = ask(model, plan, user_message(data, question))
+            seconds = time.perf_counter() - start
+            record = {
+                "case": case,
+                "model": model,
+                "question": question,
+                "system": plan.system,
+                "prompt_tokens": answer.prompt_tokens,
+                "completion_tokens": answer.completion_tokens,
+                "stop": answer.stop,
+                "seconds": round(seconds, 2),
+                "answer": answer.text,
+            }
+            path = folder / plan.answer_name(case, model)
+            path.write_text(json.dumps(record, indent=1, ensure_ascii=False))
+            print(
+                f"\n=== {case} · {model} · {answer.prompt_tokens}+{answer.completion_tokens} "
+                f"tokens · {seconds:.1f} s\n{answer.text}"
+            )
+
+
+def main(argv: list[str] | None = None) -> None:
+    """Run the command. With no word at all, print how to use it."""
+    argv = sys.argv[1:] if argv is None else argv
+    if not argv:
+        sys.exit(__doc__)
+    if argv == ["models"]:
+        if not os.environ.get(MISTRAL_KEY):
+            sys.exit(f"run_cases.py: {MISTRAL_KEY} not set: nothing was called")
+        for model in mistral_client().models.list().data:
+            print(model.id)
+        return
+    try:
+        plan = plan_from(argv)
+    except ValueError as error:
+        sys.exit(f"run_cases.py: {error}")
+    folder = HERE / "results" / date.today().isoformat()
+    reason = reason_not_to_run(plan, folder, dict(os.environ))
+    if reason:
+        sys.exit(f"run_cases.py: {reason}")
+    run(plan, folder)
+
+
+if __name__ == "__main__":
+    main()
